@@ -1,0 +1,27 @@
+.DS_Store
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated runs are local unless deliberately copied into example_results.
+local_results/
+results/
+
+# Raw or externally supplied experimental data must stay outside Git.
+external_data/
+raw_data/
+*.h5
+*.hdf5
+*.nxs
+*.edf
+*.poni
+
+# A real registry contains local source paths; only the example is committed.
+configs/secondary_samples/scan_registry.json
+
+# Temporary exports
+*.tmp
+*.log
+~$*

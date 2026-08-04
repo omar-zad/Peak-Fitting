@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "purpose": "Copy to scan_registry.json and replace placeholders with local source paths.",
+  "scans": {
+    "000000": {
+      "sample_label": "Example sample (scan 000000)",
+      "sample_slug": "example_sample",
+      "temperature_file": "/absolute/path/to/temperature_per_frame.xlsx",
+      "dat_file": "/absolute/path/to/000000.dat",
+      "profile_files": {
+        "FR": "/absolute/path/to/FR_1Dintegrations.csv",
+        "IP": "/absolute/path/to/IP_1Dintegrations.csv",
+        "OOP": "/absolute/path/to/OOP_1Dintegrations.csv"
+      },
+      "suggested_key_frames": [0, 10, 20],
+      "key_frames": [0, 10, 20]
+    }
+  }
+}

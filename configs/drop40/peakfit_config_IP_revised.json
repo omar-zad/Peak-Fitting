@@ -1,0 +1,276 @@
+{
+  "frame_temperatures_C": {
+    "193": 40,
+    "194": 50,
+    "195": 55,
+    "196": 60,
+    "197": 65,
+    "198": 70,
+    "199": 75,
+    "200": 80,
+    "201": 150
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 7,
+    "multistarts_final": 12,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "lamellar_low_q",
+      "title": "IP low-q two-component candidate",
+      "q_min": 0.22,
+      "q_max": 0.44,
+      "peaks": [
+        {
+          "key": "q0306",
+          "label": "0.306 broad",
+          "q_guess": 0.306,
+          "q_min": 0.288,
+          "q_max": 0.32,
+          "fwhm_guess": 0.07,
+          "fwhm_min": 0.03,
+          "fwhm_max": 0.13,
+          "anchor_temperature_C": 150
+        },
+        {
+          "key": "q0334",
+          "label": "0.337 to 0.331 shoulder",
+          "q_guess": 0.334,
+          "q_min": 0.325,
+          "q_max": 0.345,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.045,
+          "anchor_temperature_C": 40
+        }
+      ],
+      "profile_note": "Gaussian, Lorentzian, and pseudo-Voigt remain candidates; select one family across all nine IP frames by BIC."
+    },
+    {
+      "key": "heated_low_q_ip",
+      "title": "IP heating-induced low-q candidates",
+      "q_min": 0.44,
+      "q_max": 0.57,
+      "peaks": [
+        {
+          "key": "q0461_ip",
+          "label": "IP provisional approximately 0.461",
+          "q_guess": 0.461,
+          "q_min": 0.45,
+          "q_max": 0.48,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.01,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0520_ip",
+          "label": "IP provisional approximately 0.520",
+          "q_guess": 0.52,
+          "q_min": 0.5,
+          "q_max": 0.545,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.01,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "q0754",
+      "title": "Early-temperature q = 0.754 A^-1 candidate",
+      "q_min": 0.7,
+      "q_max": 0.8,
+      "peaks": [
+        {
+          "key": "q0754",
+          "label": "0.754",
+          "q_guess": 0.754,
+          "q_min": 0.735,
+          "q_max": 0.765,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.05,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "q0947",
+      "title": "Conditional q = 0.947 A^-1 candidate",
+      "q_min": 0.88,
+      "q_max": 1.01,
+      "peaks": [
+        {
+          "key": "q0947",
+          "label": "0.947",
+          "q_guess": 0.947,
+          "q_min": 0.915,
+          "q_max": 0.96,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "q1532",
+      "title": "IP q approximately 1.54 A^-1 (position/area only)",
+      "q_min": 1.45,
+      "q_max": 1.61,
+      "peaks": [
+        {
+          "key": "q1532",
+          "label": "IP approximately 1.54 (q/area only)",
+          "q_guess": 1.54,
+          "q_min": 1.515,
+          "q_max": 1.555,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.065,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        }
+      ],
+      "reporting_scope": "q_position_and_area_only"
+    },
+    {
+      "key": "pi_pi_sharp_pair_ip",
+      "title": "IP low-temperature sharp pi-pi-region pair",
+      "q_min": 1.67,
+      "q_max": 1.8,
+      "temperature_max_C": 60,
+      "peaks": [
+        {
+          "key": "q1713_ip",
+          "label": "IP sharp approximately 1.713",
+          "q_guess": 1.713,
+          "q_min": 1.695,
+          "q_max": 1.73,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.05,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q1750_ip",
+          "label": "IP sharp approximately 1.750",
+          "q_guess": 1.75,
+          "q_min": 1.735,
+          "q_max": 1.765,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.05,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "pi_pi_highT_two_broad",
+      "title": "High-temperature two-component pi-pi-region sensitivity",
+      "q_min": 1.6,
+      "q_max": 1.9,
+      "temperature_min_C": 65,
+      "peaks": [
+        {
+          "key": "q1660_broad_highT",
+          "label": "high-temperature lower-q broad component",
+          "q_guess": 1.66,
+          "q_min": 1.62,
+          "q_max": 1.69,
+          "fwhm_guess": 0.12,
+          "fwhm_min": 0.05,
+          "fwhm_max": 0.25,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q1750_broad_highT",
+          "label": "high-temperature higher-q broad component",
+          "q_guess": 1.75,
+          "q_min": 1.7,
+          "q_max": 1.8,
+          "fwhm_guess": 0.12,
+          "fwhm_min": 0.05,
+          "fwhm_max": 0.25,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "q2015_ip_provisional",
+      "title": "IP provisional/unassigned q approximately 2.015 A^-1",
+      "q_min": 1.96,
+      "q_max": 2.05,
+      "peaks": [
+        {
+          "key": "q2015_ip",
+          "label": "IP provisional/unassigned approximately 2.015",
+          "q_guess": 2.015,
+          "q_min": 1.99,
+          "q_max": 2.035,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.065,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "q2074_q2111_ip",
+      "title": "IP provisional high-q sharp pair",
+      "q_min": 2.04,
+      "q_max": 2.15,
+      "peaks": [
+        {
+          "key": "q2074_ip",
+          "label": "IP provisional approximately 2.074",
+          "q_guess": 2.074,
+          "q_min": 2.055,
+          "q_max": 2.098,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q2111_ip",
+          "label": "IP provisional approximately 2.111",
+          "q_guess": 2.111,
+          "q_min": 2.1,
+          "q_max": 2.145,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.06,
+          "anchor_temperature_C": 40,
+          "provisional_assignment": true
+        }
+      ]
+    }
+  ],
+  "analysis_variant": "IP cut-specific simplified model; norm-corrected nine-frame series"
+}

@@ -1,0 +1,371 @@
+{
+  "frame_temperatures_C": {
+    "0": 35.1,
+    "1": 53.5,
+    "2": 68.3,
+    "3": 77.3,
+    "4": 82.0,
+    "5": 83.9,
+    "6": 84.1,
+    "7": 83.8,
+    "8": 83.6,
+    "9": 83.5,
+    "10": 83.7,
+    "11": 83.8,
+    "12": 83.6,
+    "13": 83.7,
+    "14": 83.7,
+    "15": 83.8,
+    "16": 83.8,
+    "17": 83.8,
+    "18": 83.7,
+    "19": 83.8,
+    "20": 83.4,
+    "21": 83.6,
+    "22": 83.6,
+    "23": 83.8,
+    "24": 83.9,
+    "25": 83.7,
+    "26": 83.6,
+    "27": 83.7,
+    "28": 83.6,
+    "29": 83.9,
+    "30": 83.9,
+    "31": 83.7,
+    "32": 83.6,
+    "33": 83.5,
+    "34": 83.6,
+    "35": 83.6,
+    "36": 83.4,
+    "37": 83.6,
+    "38": 83.7,
+    "39": 83.8,
+    "40": 83.6,
+    "41": 83.8,
+    "42": 83.8,
+    "43": 83.6,
+    "44": 83.1,
+    "45": 81.9
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 4,
+    "multistarts_final": 6,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "low_q_pair",
+      "title": "FR broad and sharp low-q components",
+      "q_min": 0.235,
+      "q_max": 0.385,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "low_q_broad",
+          "label": "FR unassigned broad low-q component",
+          "q_guess": 0.306,
+          "q_min": 0.285,
+          "q_max": 0.321,
+          "fwhm_guess": 0.068,
+          "fwhm_min": 0.04,
+          "fwhm_max": 0.12,
+          "anchor_frame": 45,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 81.9
+        },
+        {
+          "key": "low_q_sharp",
+          "label": "FR unassigned sharp low-q component",
+          "q_guess": 0.331,
+          "q_min": 0.324,
+          "q_max": 0.342,
+          "fwhm_guess": 0.012,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.025,
+          "anchor_frame": 45,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 81.9
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_0430_transient",
+      "title": "FR transient feature near 0.43",
+      "q_min": 0.39,
+      "q_max": 0.48,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_0430_transient",
+          "label": "FR unassigned transient component near 0.43",
+          "q_guess": 0.43,
+          "q_min": 0.416,
+          "q_max": 0.445,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.032,
+          "anchor_frame": 0,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 35.1
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 70.0
+    },
+    {
+      "key": "feature_0530",
+      "title": "FR emerging feature near 0.53",
+      "q_min": 0.485,
+      "q_max": 0.575,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_0530",
+          "label": "FR unassigned emerging component near 0.53",
+          "q_guess": 0.53,
+          "q_min": 0.51,
+          "q_max": 0.545,
+          "fwhm_guess": 0.035,
+          "fwhm_min": 0.018,
+          "fwhm_max": 0.08,
+          "anchor_frame": 45,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 81.9
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 60.0
+    },
+    {
+      "key": "feature_0748_transient",
+      "title": "FR transient feature near 0.75",
+      "q_min": 0.7,
+      "q_max": 0.79,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_0748_transient",
+          "label": "FR unassigned transient component near 0.75",
+          "q_guess": 0.748,
+          "q_min": 0.735,
+          "q_max": 0.758,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.03,
+          "anchor_frame": 0,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 35.1
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 82.5
+    },
+    {
+      "key": "feature_1500_1526_transient",
+      "title": "FR transient early components near 1.50 and 1.53",
+      "q_min": 1.465,
+      "q_max": 1.575,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_1500_transient",
+          "label": "FR unassigned transient component near 1.50",
+          "q_guess": 1.5,
+          "q_min": 1.485,
+          "q_max": 1.51,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        },
+        {
+          "key": "feature_1526_transient",
+          "label": "FR unassigned transient component near 1.53",
+          "q_guess": 1.526,
+          "q_min": 1.512,
+          "q_max": 1.545,
+          "fwhm_guess": 0.035,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.075,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "high_q_early_pair",
+      "title": "FR early high-q components near 1.66 and 1.70",
+      "q_min": 1.61,
+      "q_max": 1.82,
+      "temperature_max_C": 78.0,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_1656_early",
+          "label": "FR unassigned early sharp component near 1.66",
+          "q_guess": 1.656,
+          "q_min": 1.64,
+          "q_max": 1.67,
+          "fwhm_guess": 0.015,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.03,
+          "anchor_frame": 0,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 35.1
+        },
+        {
+          "key": "feature_1695_early_broad",
+          "label": "FR unassigned early broad component near 1.70",
+          "q_guess": 1.695,
+          "q_min": 1.675,
+          "q_max": 1.73,
+          "fwhm_guess": 0.055,
+          "fwhm_min": 0.015,
+          "fwhm_max": 0.13,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "high_q_late_broad",
+      "title": "FR later broad high-q feature near 1.74",
+      "q_min": 1.61,
+      "q_max": 1.82,
+      "temperature_min_C": 80.0,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_1735_late_broad",
+          "label": "FR unassigned later broad component near 1.74",
+          "q_guess": 1.735,
+          "q_min": 1.68,
+          "q_max": 1.79,
+          "fwhm_guess": 0.08,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.2,
+          "anchor_frame": 45,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 81.9
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_1950_1990_transient",
+      "title": "FR transient early components near 1.95 and 1.99",
+      "q_min": 1.9,
+      "q_max": 2.08,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_1950_transient",
+          "label": "FR unassigned transient component near 1.95",
+          "q_guess": 1.95,
+          "q_min": 1.935,
+          "q_max": 1.965,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.065,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        },
+        {
+          "key": "feature_1990_transient",
+          "label": "FR unassigned transient component near 1.99",
+          "q_guess": 1.99,
+          "q_min": 1.975,
+          "q_max": 2.01,
+          "fwhm_guess": 0.04,
+          "fwhm_min": 0.01,
+          "fwhm_max": 0.085,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 82.5
+    },
+    {
+      "key": "feature_2217_transient",
+      "title": "FR transient sharp feature near 2.22",
+      "q_min": 2.17,
+      "q_max": 2.26,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_2217_transient",
+          "label": "FR unassigned transient sharp component near 2.22",
+          "q_guess": 2.217,
+          "q_min": 2.2,
+          "q_max": 2.23,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.045,
+          "anchor_frame": 0,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 35.1
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 70.0
+    }
+  ],
+  "analysis_scope": "Sample-specific key-frame screening for peak presence, conservative q0/d and integrated area. Under-resolved lines and multiplet envelopes do not provide physical FWHM or CCL.",
+  "representative_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    10,
+    25,
+    45
+  ],
+  "series_metadata": {
+    "scan": 587207,
+    "sample_label": "Dimitar_nogas",
+    "cut": "FR",
+    "series_type": "secondary_in_situ_time_series",
+    "frame_manifest": "./data/dimitar_nogas_587207/scan_587207/processed/scan587207_frame_manifest.csv",
+    "key_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      25,
+      45
+    ],
+    "anchor_frame": 10,
+    "anchor_temperature_C": 83.7,
+    "template_config": "./configs/in_situ/scan_587214/representative/scan587214_FR_keyframes.json",
+    "scientific_status": "Candidate v5: early/late regimes are separated after selected-frame residual QC; absent transient components are no longer fit outside their observed regime.",
+    "source_candidate_config": "./configs/secondary_samples/scan_587207/candidate_v4/scan587207_FR_candidate_keyframes.json"
+  }
+}

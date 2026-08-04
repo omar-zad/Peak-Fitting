@@ -1,0 +1,273 @@
+{
+  "frame_temperatures_C": {
+    "0": 35.1,
+    "1": 53.5,
+    "2": 68.3,
+    "3": 77.3,
+    "4": 82.0,
+    "5": 83.9,
+    "6": 84.1,
+    "7": 83.8,
+    "8": 83.6,
+    "9": 83.5,
+    "10": 83.7,
+    "11": 83.8,
+    "12": 83.6,
+    "13": 83.7,
+    "14": 83.7,
+    "15": 83.8,
+    "16": 83.8,
+    "17": 83.8,
+    "18": 83.7,
+    "19": 83.8,
+    "20": 83.4,
+    "21": 83.6,
+    "22": 83.6,
+    "23": 83.8,
+    "24": 83.9,
+    "25": 83.7,
+    "26": 83.6,
+    "27": 83.7,
+    "28": 83.6,
+    "29": 83.9,
+    "30": 83.9,
+    "31": 83.7,
+    "32": 83.6,
+    "33": 83.5,
+    "34": 83.6,
+    "35": 83.6,
+    "36": 83.4,
+    "37": 83.6,
+    "38": 83.7,
+    "39": 83.8,
+    "40": 83.6,
+    "41": 83.8,
+    "42": 83.8,
+    "43": 83.6,
+    "44": 83.1,
+    "45": 81.9
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 4,
+    "multistarts_final": 6,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "low_q_pair",
+      "title": "IP broad and sharp low-q components",
+      "q_min": 0.235,
+      "q_max": 0.38,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "low_q_broad",
+          "label": "IP unassigned broad low-q component",
+          "q_guess": 0.3,
+          "q_min": 0.27,
+          "q_max": 0.318,
+          "fwhm_guess": 0.065,
+          "fwhm_min": 0.035,
+          "fwhm_max": 0.13,
+          "anchor_frame": 25,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 83.7
+        },
+        {
+          "key": "low_q_sharp",
+          "label": "IP unassigned sharp low-q component",
+          "q_guess": 0.331,
+          "q_min": 0.323,
+          "q_max": 0.339,
+          "fwhm_guess": 0.015,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.026,
+          "anchor_frame": 25,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 83.7
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "mid_q_pair",
+      "title": "IP main and shoulder features near 0.45 and 0.51",
+      "q_min": 0.415,
+      "q_max": 0.555,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_0449",
+          "label": "IP unassigned moving component near 0.45",
+          "q_guess": 0.449,
+          "q_min": 0.44,
+          "q_max": 0.48,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.038,
+          "anchor_frame": 25,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 83.7
+        },
+        {
+          "key": "feature_0505",
+          "label": "IP unassigned weak shoulder near 0.51",
+          "q_guess": 0.505,
+          "q_min": 0.49,
+          "q_max": 0.525,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.06,
+          "anchor_frame": 45,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 81.9
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_0729_transient",
+      "title": "IP transient feature near 0.73",
+      "q_min": 0.69,
+      "q_max": 0.78,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_0729_transient",
+          "label": "IP unassigned transient component near 0.73",
+          "q_guess": 0.729,
+          "q_min": 0.716,
+          "q_max": 0.748,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.035,
+          "anchor_frame": 0,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 35.1
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 82.5
+    },
+    {
+      "key": "feature_1500_1532_transient",
+      "title": "IP transient early components near 1.50 and 1.53",
+      "q_min": 1.47,
+      "q_max": 1.58,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_1500_transient",
+          "label": "IP unassigned transient component near 1.50",
+          "q_guess": 1.5,
+          "q_min": 1.485,
+          "q_max": 1.515,
+          "fwhm_guess": 0.035,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.075,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        },
+        {
+          "key": "feature_1532_transient",
+          "label": "IP unassigned transient component near 1.53",
+          "q_guess": 1.532,
+          "q_min": 1.518,
+          "q_max": 1.55,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 35.1,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "high_q_transition",
+      "title": "IP early 1.71 and later broad 1.76 components",
+      "q_min": 1.665,
+      "q_max": 1.825,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "feature_1712_early",
+          "label": "IP unassigned early sharp component near 1.71",
+          "q_guess": 1.712,
+          "q_min": 1.697,
+          "q_max": 1.72,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.04,
+          "anchor_frame": 0,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 35.1
+        },
+        {
+          "key": "feature_1755_broad",
+          "label": "IP unassigned later broad component near 1.76",
+          "q_guess": 1.755,
+          "q_min": 1.721,
+          "q_max": 1.79,
+          "fwhm_guess": 0.12,
+          "fwhm_min": 0.04,
+          "fwhm_max": 0.22,
+          "anchor_frame": 45,
+          "provisional_assignment": true,
+          "anchor_temperature_C": 81.9
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    }
+  ],
+  "analysis_scope": "Sample-specific key-frame screening for peak presence, conservative q0/d and integrated area. Under-resolved lines and multiplet envelopes do not provide physical FWHM or CCL.",
+  "representative_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    10,
+    25,
+    45
+  ],
+  "series_metadata": {
+    "scan": 587207,
+    "sample_label": "Dimitar_nogas",
+    "cut": "IP",
+    "series_type": "secondary_in_situ_time_series",
+    "frame_manifest": "./data/dimitar_nogas_587207/scan_587207/processed/scan587207_frame_manifest.csv",
+    "key_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      25,
+      45
+    ],
+    "anchor_frame": 10,
+    "anchor_temperature_C": 83.7,
+    "template_config": "./configs/in_situ/scan_587214/representative/scan587214_IP_keyframes.json",
+    "scientific_status": "Candidate v5: the transient 0.73 A^-1 feature is limited to the observed heating regime; other candidate v4 IP windows passed selected-frame review.",
+    "source_candidate_config": "./configs/secondary_samples/scan_587207/candidate_v4/scan587207_IP_candidate_keyframes.json"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "bootstrap_replicates_per_window_frame": 0,
+  "config_file": "./configs/drop40/peakfit_config_FR_revised.json",
+  "config_snapshot": "./example_results/drop40_FR_checkpoint/config_used.json",
+  "first_frame_confirmation_required_for_all_stage": true,
+  "frames": [
+    "193"
+  ],
+  "input_file": "./example_data/drop40/drop40_FR_9frames_norm.txt",
+  "method": {
+    "background": "simultaneous polynomial in each local q-window; order is taken from the window configuration",
+    "detection": "leave-one-peak-out delta BIC plus area signal-to-noise",
+    "input_preprocessing": "none; raw supplied values, no smoothing or offset",
+    "profile_candidates": [
+      "gaussian",
+      "lorentzian",
+      "pseudo_voigt"
+    ],
+    "pseudo_voigt_constraint": "one eta shared across all frames within a q-window",
+    "selection": "BIC within each window's configured temperature subset; simpler model within delta BIC < 2",
+    "uncertainty": "adaptive circular moving-block residual bootstrap when requested (block length 1 for weak residual correlation; otherwise approximately n^(1/3)); otherwise local covariance approximation"
+  },
+  "package_versions": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0"
+  },
+  "platform": "macOS-14.4.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "q_step_Ainv": 0.006224999999999994,
+  "random_seed": 20260723,
+  "stage": "first",
+  "temperatures_C": {
+    "193": 40.0
+  }
+}

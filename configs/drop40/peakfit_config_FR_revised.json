@@ -1,0 +1,326 @@
+{
+  "frame_temperatures_C": {
+    "193": 40,
+    "194": 50,
+    "195": 55,
+    "196": 60,
+    "197": 65,
+    "198": 70,
+    "199": 75,
+    "200": 80,
+    "201": 150
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 7,
+    "multistarts_final": 12,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "lamellar_low_q",
+      "title": "FR descriptive three-component low-q model",
+      "q_min": 0.22,
+      "q_max": 0.44,
+      "peaks": [
+        {
+          "key": "q0295_broad",
+          "label": "broad low-q component",
+          "q_guess": 0.295,
+          "q_min": 0.28,
+          "q_max": 0.304,
+          "fwhm_guess": 0.065,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.12,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0307_narrow",
+          "label": "0.307 narrow component",
+          "q_guess": 0.307,
+          "q_min": 0.304,
+          "q_max": 0.316,
+          "fwhm_guess": 0.015,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.04,
+          "anchor_temperature_C": 80,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0334",
+          "label": "0.337 to 0.331 shoulder",
+          "q_guess": 0.334,
+          "q_min": 0.325,
+          "q_max": 0.345,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.045,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "heated_low_q_0480_0536",
+      "title": "Heating-induced q = 0.480 / 0.536 A^-1 pair",
+      "q_min": 0.44,
+      "q_max": 0.57,
+      "peaks": [
+        {
+          "key": "q0480",
+          "label": "0.480",
+          "q_guess": 0.48,
+          "q_min": 0.462,
+          "q_max": 0.492,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.06,
+          "anchor_temperature_C": 150
+        },
+        {
+          "key": "q0536",
+          "label": "0.536",
+          "q_guess": 0.536,
+          "q_min": 0.52,
+          "q_max": 0.548,
+          "fwhm_guess": 0.028,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.06,
+          "anchor_temperature_C": 150
+        }
+      ]
+    },
+    {
+      "key": "heated_low_q_0604_0642",
+      "title": "Heating-induced q = 0.604 / 0.642 A^-1 pair",
+      "q_min": 0.57,
+      "q_max": 0.69,
+      "peaks": [
+        {
+          "key": "q0604",
+          "label": "0.604",
+          "q_guess": 0.604,
+          "q_min": 0.578,
+          "q_max": 0.617,
+          "fwhm_guess": 0.024,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.06,
+          "anchor_temperature_C": 150
+        },
+        {
+          "key": "q0642",
+          "label": "0.642",
+          "q_guess": 0.642,
+          "q_min": 0.628,
+          "q_max": 0.652,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.045,
+          "anchor_temperature_C": 150
+        }
+      ]
+    },
+    {
+      "key": "q0754",
+      "title": "Nominal q = 0.754 A^-1 reflection",
+      "q_min": 0.7,
+      "q_max": 0.8,
+      "peaks": [
+        {
+          "key": "q0754",
+          "label": "0.754",
+          "q_guess": 0.754,
+          "q_min": 0.735,
+          "q_max": 0.765,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.05,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "q0947",
+      "title": "Nominal q = 0.947 A^-1 reflection",
+      "q_min": 0.88,
+      "q_max": 1.01,
+      "peaks": [
+        {
+          "key": "q0947",
+          "label": "0.947",
+          "q_guess": 0.947,
+          "q_min": 0.915,
+          "q_max": 0.96,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "q1532",
+      "title": "Nominal q = 1.532 A^-1 reflection",
+      "q_min": 1.45,
+      "q_max": 1.61,
+      "peaks": [
+        {
+          "key": "q1532",
+          "label": "1.532",
+          "q_guess": 1.532,
+          "q_min": 1.51,
+          "q_max": 1.545,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.065,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "pi_pi_sharp_pair",
+      "title": "Low-temperature sharp q = 1.713 / 1.750 A^-1 pair",
+      "q_min": 1.66,
+      "q_max": 1.82,
+      "temperature_max_C": 60,
+      "peaks": [
+        {
+          "key": "q1713",
+          "label": "1.713 sharp",
+          "q_guess": 1.713,
+          "q_min": 1.69,
+          "q_max": 1.722,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.04,
+          "anchor_temperature_C": 40
+        },
+        {
+          "key": "q1750",
+          "label": "1.750 sharp",
+          "q_guess": 1.75,
+          "q_min": 1.728,
+          "q_max": 1.758,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.04,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "pi_pi_highT_two_broad",
+      "title": "High-temperature two-component pi-pi-region sensitivity",
+      "q_min": 1.6,
+      "q_max": 1.9,
+      "temperature_min_C": 65,
+      "peaks": [
+        {
+          "key": "q1660_broad_highT",
+          "label": "high-temperature lower-q broad component",
+          "q_guess": 1.66,
+          "q_min": 1.62,
+          "q_max": 1.69,
+          "fwhm_guess": 0.12,
+          "fwhm_min": 0.05,
+          "fwhm_max": 0.25,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q1750_broad_highT",
+          "label": "high-temperature higher-q broad component",
+          "q_guess": 1.75,
+          "q_min": 1.7,
+          "q_max": 1.8,
+          "fwhm_guess": 0.12,
+          "fwhm_min": 0.05,
+          "fwhm_max": 0.25,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        }
+      ]
+    },
+    {
+      "key": "q1999_single",
+      "title": "Nominal q = 1.999 A^-1 reflection",
+      "q_min": 1.94,
+      "q_max": 2.04,
+      "peaks": [
+        {
+          "key": "q1999",
+          "label": "1.999",
+          "q_guess": 1.999,
+          "q_min": 1.982,
+          "q_max": 2.012,
+          "fwhm_guess": 0.024,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "q2086_q2117_pair",
+      "title": "Nominal q = 2.086 / 2.117 A^-1 pair",
+      "q_min": 2.04,
+      "q_max": 2.17,
+      "peaks": [
+        {
+          "key": "q2086",
+          "label": "2.086",
+          "q_guess": 2.086,
+          "q_min": 2.045,
+          "q_max": 2.1,
+          "fwhm_guess": 0.032,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.08,
+          "anchor_temperature_C": 40
+        },
+        {
+          "key": "q2117",
+          "label": "2.117",
+          "q_guess": 2.117,
+          "q_min": 2.097,
+          "q_max": 2.132,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.06,
+          "anchor_temperature_C": 40
+        }
+      ]
+    },
+    {
+      "key": "q2279",
+      "title": "Early-temperature q = 2.279 A^-1 candidate",
+      "q_min": 2.22,
+      "q_max": 2.32,
+      "peaks": [
+        {
+          "key": "q2279",
+          "label": "2.279",
+          "q_guess": 2.279,
+          "q_min": 2.245,
+          "q_max": 2.305,
+          "fwhm_guess": 0.035,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.085,
+          "anchor_temperature_C": 40
+        }
+      ]
+    }
+  ],
+  "analysis_variant": "FR revised low-degeneracy windows; norm-corrected nine-frame series"
+}

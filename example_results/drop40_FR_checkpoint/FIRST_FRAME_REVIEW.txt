@@ -1,0 +1,26 @@
+FIRST-FRAME MANUAL REVIEW CHECKPOINT
+====================================
+
+Frame: 193
+Temperature: 40 C
+Optimizer successes: 10 / 10 windows
+Windows carrying a QC flag: 4 / 10
+
+Selected profile by q-window (Gaussian and Lorentzian were fitted as alternatives to constrained pseudo-Voigt):
+  - lamellar_low_q: Lorentzian
+  - heated_low_q_0480_0536: Lorentzian
+  - heated_low_q_0604_0642: Gaussian
+  - q0754: Gaussian
+  - q0947: Gaussian
+  - q1532: pseudo-Voigt, eta=0.402
+  - pi_pi_sharp_pair: Gaussian
+  - q1999_single: Lorentzian
+  - q2086_q2117_pair: Gaussian
+  - q2279: Gaussian
+
+Manual gate:
+  1. Inspect figures/first_frame_diagnostic.png.
+  2. Check peak count, bounds, background, component overlap, and residual structure.
+  3. Only after approval, run the all-frame command with --stage all --confirm-first-fit.
+
+This stage intentionally does not launch the remaining frames.

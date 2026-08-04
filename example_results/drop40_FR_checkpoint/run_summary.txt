@@ -1,0 +1,39 @@
+GIWAXS peak-fit run summary
+============================
+
+q sampling interval: 0.0062250 A^-1
+Moving-block residual-bootstrap replicates requested per window/frame: 0
+
+Selected profile by fitting window:
+  - lamellar_low_q: Lorentzian
+  - heated_low_q_0480_0536: Lorentzian
+  - heated_low_q_0604_0642: Gaussian
+  - q0754: Gaussian
+  - q0947: Gaussian
+  - q1532: pseudo-Voigt, shared eta=0.402
+  - pi_pi_sharp_pair: Gaussian
+  - q1999_single: Lorentzian
+  - q2086_q2117_pair: Gaussian
+  - q2279: Gaussian
+
+Peak detection classifications:
+  - strong: 12
+  - detected: 0
+  - detected_fixed_shape: 0
+  - tentative: 0
+  - tentative_fixed_shape: 0
+  - unresolved: 1
+  - not_detected: 3
+
+Reportable apparent FWHM values: 0 / 16
+Minimum q steps across FWHM for width reporting: 5
+Window/frame fits carrying at least one QC flag: 4 / 10
+
+Interpretive cautions:
+  - No propagated pointwise measurement uncertainty was supplied.
+  - Confidence intervals are conditional on the selected profile and linear-background model.
+  - The residual bootstrap uses short circular blocks when lag-1 correlation is material; it does not model every possible systematic error.
+  - Apparent FWHM is not instrument-deconvolved and should not be converted to crystallite size/strain without a resolution standard.
+  - 'not_detected' rows retain a fixed-shape area estimate/upper bound; their q0, d, and FWHM are intentionally not reported.
+  - 'detected_fixed_shape' rows have evidence for non-zero area, but their position/FWHM were borrowed from the configured anchor frame.
+  - A 1D radial series cannot establish face-on/edge-on orientation or mosaicity without the corresponding 2D/azimuthal information.

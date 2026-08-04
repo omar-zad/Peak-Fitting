@@ -1,0 +1,258 @@
+{
+  "frame_temperatures_C": {
+    "0": 37.3,
+    "1": 55.4,
+    "2": 69.7,
+    "3": 78.4,
+    "4": 82.3,
+    "5": 84.1,
+    "6": 84.5,
+    "7": 84.2,
+    "8": 83.7,
+    "9": 83.7,
+    "10": 83.7,
+    "11": 83.9,
+    "12": 83.6,
+    "13": 83.8,
+    "14": 84.0,
+    "15": 83.6,
+    "16": 83.4,
+    "17": 83.6,
+    "18": 83.6,
+    "19": 83.9,
+    "20": 83.9,
+    "21": 83.9,
+    "22": 84.0,
+    "23": 83.9,
+    "24": 83.9,
+    "25": 84.0,
+    "26": 83.7,
+    "27": 82.7,
+    "28": 81.8,
+    "29": 80.7,
+    "30": 79.2,
+    "31": 78.5,
+    "32": 77.4,
+    "33": 75.9,
+    "34": 75.0,
+    "35": 73.9
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 4,
+    "multistarts_final": 6,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "low_q_broad",
+      "title": "OOP persistent broad low-q envelope",
+      "q_min": 0.235,
+      "q_max": 0.395,
+      "peaks": [
+        {
+          "key": "low_q_broad",
+          "label": "OOP broad low-q component",
+          "q_guess": 0.306,
+          "q_min": 0.285,
+          "q_max": 0.34,
+          "fwhm_guess": 0.07,
+          "fwhm_min": 0.045,
+          "fwhm_max": 0.15,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_0430_early",
+      "title": "OOP early feature near q=0.430",
+      "q_min": 0.395,
+      "q_max": 0.47,
+      "peaks": [
+        {
+          "key": "feature_0430_early",
+          "label": "OOP early component near q=0.430",
+          "q_guess": 0.43,
+          "q_min": 0.416,
+          "q_max": 0.442,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.035,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_0530",
+      "title": "OOP feature near q=0.530",
+      "q_min": 0.48,
+      "q_max": 0.59,
+      "peaks": [
+        {
+          "key": "feature_0530",
+          "label": "OOP component near q=0.530",
+          "q_guess": 0.53,
+          "q_min": 0.515,
+          "q_max": 0.545,
+          "fwhm_guess": 0.032,
+          "fwhm_min": 0.012,
+          "fwhm_max": 0.085,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 50.0
+    },
+    {
+      "key": "feature_0741_early",
+      "title": "OOP early feature near q=0.741",
+      "q_min": 0.7,
+      "q_max": 0.79,
+      "peaks": [
+        {
+          "key": "feature_0741_early",
+          "label": "OOP early component near q=0.741",
+          "q_guess": 0.741,
+          "q_min": 0.732,
+          "q_max": 0.753,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.04,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_1482_early",
+      "title": "OOP early feature near q=1.482",
+      "q_min": 1.44,
+      "q_max": 1.54,
+      "peaks": [
+        {
+          "key": "feature_1482_early",
+          "label": "OOP early component near q=1.482",
+          "q_guess": 1.482,
+          "q_min": 1.468,
+          "q_max": 1.5,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.045,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_1730_broad_early",
+      "title": "OOP provisional early broad shoulder near q=1.73",
+      "q_min": 1.62,
+      "q_max": 1.84,
+      "peaks": [
+        {
+          "key": "feature_1730_broad_early",
+          "label": "OOP early broad shoulder near q=1.73",
+          "q_guess": 1.73,
+          "q_min": 1.67,
+          "q_max": 1.79,
+          "fwhm_guess": 0.105,
+          "fwhm_min": 0.04,
+          "fwhm_max": 0.22,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_2217_early",
+      "title": "OOP early feature near q=2.217",
+      "q_min": 2.16,
+      "q_max": 2.25,
+      "peaks": [
+        {
+          "key": "feature_2217_early",
+          "label": "OOP early component near q=2.217",
+          "q_guess": 2.217,
+          "q_min": 2.195,
+          "q_max": 2.225,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    }
+  ],
+  "analysis_scope": "Scan-specific candidate-v2 key-frame screening for peak presence, q0/d and integrated area. No CCL interpretation.",
+  "representative_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    11,
+    25,
+    35
+  ],
+  "series_metadata": {
+    "scan": 587217,
+    "sample_label": "Dimitar_bcnogas1",
+    "cut": "OOP",
+    "series_type": "secondary_in_situ_time_series",
+    "frame_manifest": "./data/dimitar_bcnogas1/scan_587217/processed/scan587217_frame_manifest.csv",
+    "key_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      25,
+      35
+    ],
+    "visual_review": "./results/dimitar_bcnogas1/scan_587217/key_frames_v1/STAGE1_VISUAL_REVIEW.md",
+    "config_version": "candidate_v2",
+    "late_cooling_frame": 35,
+    "late_cooling_temperature_C": 73.9,
+    "anchor_policy": "Persistent/high-temperature features use frame 11; features confined to frames 0-1 use frame 0.",
+    "scientific_status": "Windows are scan-specific visual candidates. They require checkpoint overlay/residual review before selected-frame fitting."
+  }
+}

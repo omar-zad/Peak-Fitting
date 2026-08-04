@@ -1,0 +1,188 @@
+{
+  "frame_temperatures_C": {
+    "0": 37.3,
+    "1": 55.4,
+    "2": 69.7,
+    "3": 78.4,
+    "4": 82.3,
+    "5": 84.1,
+    "6": 84.5,
+    "7": 84.2,
+    "8": 83.7,
+    "9": 83.7,
+    "10": 83.7,
+    "11": 83.9,
+    "12": 83.6,
+    "13": 83.8,
+    "14": 84.0,
+    "15": 83.6,
+    "16": 83.4,
+    "17": 83.6,
+    "18": 83.6,
+    "19": 83.9,
+    "20": 83.9,
+    "21": 83.9,
+    "22": 84.0,
+    "23": 83.9,
+    "24": 83.9,
+    "25": 84.0,
+    "26": 83.7,
+    "27": 82.7,
+    "28": 81.8,
+    "29": 80.7,
+    "30": 79.2,
+    "31": 78.5,
+    "32": 77.4,
+    "33": 75.9,
+    "34": 75.0,
+    "35": 73.9
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 4,
+    "multistarts_final": 6,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "feature_0327",
+      "title": "IP persistent feature near q=0.327",
+      "q_min": 0.295,
+      "q_max": 0.38,
+      "peaks": [
+        {
+          "key": "feature_0327",
+          "label": "IP component near q=0.327",
+          "q_guess": 0.327,
+          "q_min": 0.318,
+          "q_max": 0.342,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.04,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_0474_to_0449",
+      "title": "IP evolving q=0.474 to 0.449 feature",
+      "q_min": 0.405,
+      "q_max": 0.52,
+      "peaks": [
+        {
+          "key": "feature_0474_to_0449",
+          "label": "IP evolving mid-q component",
+          "q_guess": 0.449,
+          "q_min": 0.438,
+          "q_max": 0.482,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.055,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_1713_early",
+      "title": "IP early feature near q=1.713",
+      "q_min": 1.675,
+      "q_max": 1.765,
+      "peaks": [
+        {
+          "key": "feature_1713_early",
+          "label": "IP early component near q=1.713",
+          "q_guess": 1.713,
+          "q_min": 1.695,
+          "q_max": 1.725,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_2055_early",
+      "title": "IP early broad feature near q=2.055",
+      "q_min": 1.98,
+      "q_max": 2.13,
+      "peaks": [
+        {
+          "key": "feature_2055_early",
+          "label": "IP early broad component near q=2.055",
+          "q_guess": 2.055,
+          "q_min": 2.03,
+          "q_max": 2.085,
+          "fwhm_guess": 0.065,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.13,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    }
+  ],
+  "analysis_scope": "Scan-specific candidate-v2 key-frame screening for peak presence, q0/d and integrated area. No CCL interpretation.",
+  "representative_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    11,
+    25,
+    35
+  ],
+  "series_metadata": {
+    "scan": 587217,
+    "sample_label": "Dimitar_bcnogas1",
+    "cut": "IP",
+    "series_type": "secondary_in_situ_time_series",
+    "frame_manifest": "./data/dimitar_bcnogas1/scan_587217/processed/scan587217_frame_manifest.csv",
+    "key_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      25,
+      35
+    ],
+    "visual_review": "./results/dimitar_bcnogas1/scan_587217/key_frames_v1/STAGE1_VISUAL_REVIEW.md",
+    "config_version": "candidate_v2",
+    "late_cooling_frame": 35,
+    "late_cooling_temperature_C": 73.9,
+    "anchor_policy": "Persistent/high-temperature features use frame 11; features confined to frames 0-1 use frame 0.",
+    "scientific_status": "Windows are scan-specific visual candidates. They require checkpoint overlay/residual review before selected-frame fitting."
+  }
+}

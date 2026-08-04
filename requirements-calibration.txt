@@ -1,0 +1,6 @@
+# Optional: required only by scripts/calibration/sector_matched_calibrant_widths.py
+fabio>=2024.4
+h5py>=3.10
+pyFAI>=2024.1
+pygix>=0.2.2
+-r requirements.txt

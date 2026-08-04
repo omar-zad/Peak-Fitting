@@ -1,0 +1,306 @@
+{
+  "frame_temperatures_C": {
+    "0": 37.3,
+    "1": 55.4,
+    "2": 69.7,
+    "3": 78.4,
+    "4": 82.3,
+    "5": 84.1,
+    "6": 84.5,
+    "7": 84.2,
+    "8": 83.7,
+    "9": 83.7,
+    "10": 83.7,
+    "11": 83.9,
+    "12": 83.6,
+    "13": 83.8,
+    "14": 84.0,
+    "15": 83.6,
+    "16": 83.4,
+    "17": 83.6,
+    "18": 83.6,
+    "19": 83.9,
+    "20": 83.9,
+    "21": 83.9,
+    "22": 84.0,
+    "23": 83.9,
+    "24": 83.9,
+    "25": 84.0,
+    "26": 83.7,
+    "27": 82.7,
+    "28": 81.8,
+    "29": 80.7,
+    "30": 79.2,
+    "31": 78.5,
+    "32": 77.4,
+    "33": 75.9,
+    "34": 75.0,
+    "35": 73.9
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 4,
+    "multistarts_final": 6,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "low_q_pair",
+      "title": "FR broad q=0.306 and sharper q=0.331 components",
+      "q_min": 0.245,
+      "q_max": 0.375,
+      "peaks": [
+        {
+          "key": "low_q_broad",
+          "label": "FR broad low-q component",
+          "q_guess": 0.306,
+          "q_min": 0.285,
+          "q_max": 0.318,
+          "fwhm_guess": 0.065,
+          "fwhm_min": 0.03,
+          "fwhm_max": 0.12,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        },
+        {
+          "key": "low_q_sharp",
+          "label": "FR sharper low-q component",
+          "q_guess": 0.331,
+          "q_min": 0.322,
+          "q_max": 0.34,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.035,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_0430_to_0449",
+      "title": "FR evolving q=0.430 to 0.449 feature",
+      "q_min": 0.395,
+      "q_max": 0.48,
+      "peaks": [
+        {
+          "key": "feature_0430_to_0449",
+          "label": "FR evolving mid-q component",
+          "q_guess": 0.449,
+          "q_min": 0.416,
+          "q_max": 0.477,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.045,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "feature_0530",
+      "title": "FR high-temperature feature near q=0.530",
+      "q_min": 0.485,
+      "q_max": 0.58,
+      "peaks": [
+        {
+          "key": "feature_0530",
+          "label": "FR component near q=0.530",
+          "q_guess": 0.53,
+          "q_min": 0.51,
+          "q_max": 0.545,
+          "fwhm_guess": 0.04,
+          "fwhm_min": 0.015,
+          "fwhm_max": 0.09,
+          "anchor_frame": 11,
+          "anchor_temperature_C": 83.9,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 65.0
+    },
+    {
+      "key": "feature_0741_early",
+      "title": "FR early feature near q=0.741",
+      "q_min": 0.7,
+      "q_max": 0.79,
+      "peaks": [
+        {
+          "key": "feature_0741_early",
+          "label": "FR early component near q=0.741",
+          "q_guess": 0.741,
+          "q_min": 0.73,
+          "q_max": 0.753,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.04,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_1490_1526_early",
+      "title": "FR early q=1.49 shoulder and q=1.526 peak",
+      "q_min": 1.47,
+      "q_max": 1.58,
+      "peaks": [
+        {
+          "key": "feature_1490_early",
+          "label": "FR early shoulder near q=1.49",
+          "q_guess": 1.49,
+          "q_min": 1.478,
+          "q_max": 1.508,
+          "fwhm_guess": 0.035,
+          "fwhm_min": 0.012,
+          "fwhm_max": 0.075,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        },
+        {
+          "key": "feature_1526_early",
+          "label": "FR early component near q=1.526",
+          "q_guess": 1.526,
+          "q_min": 1.512,
+          "q_max": 1.54,
+          "fwhm_guess": 0.024,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_1715_early",
+      "title": "FR early feature near q=1.715",
+      "q_min": 1.66,
+      "q_max": 1.78,
+      "peaks": [
+        {
+          "key": "feature_1715_early",
+          "label": "FR early component near q=1.715",
+          "q_guess": 1.715,
+          "q_min": 1.697,
+          "q_max": 1.73,
+          "fwhm_guess": 0.038,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.07,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_1986_early",
+      "title": "FR early feature near q=1.986",
+      "q_min": 1.93,
+      "q_max": 2.02,
+      "peaks": [
+        {
+          "key": "feature_1986_early",
+          "label": "FR early sharp component near q=1.986",
+          "q_guess": 1.986,
+          "q_min": 1.97,
+          "q_max": 2.002,
+          "fwhm_guess": 0.024,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    },
+    {
+      "key": "feature_2060_early",
+      "title": "FR early broad feature near q=2.060",
+      "q_min": 2.025,
+      "q_max": 2.12,
+      "peaks": [
+        {
+          "key": "feature_2060_early",
+          "label": "FR early broad component near q=2.060",
+          "q_guess": 2.06,
+          "q_min": 2.035,
+          "q_max": 2.095,
+          "fwhm_guess": 0.055,
+          "fwhm_min": 0.018,
+          "fwhm_max": 0.12,
+          "anchor_frame": 0,
+          "anchor_temperature_C": 37.3,
+          "provisional_assignment": true
+        }
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 60.0
+    }
+  ],
+  "analysis_scope": "Scan-specific candidate-v2 key-frame screening for peak presence, q0/d and integrated area. No CCL interpretation.",
+  "representative_frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    11,
+    25,
+    35
+  ],
+  "series_metadata": {
+    "scan": 587217,
+    "sample_label": "Dimitar_bcnogas1",
+    "cut": "FR",
+    "series_type": "secondary_in_situ_time_series",
+    "frame_manifest": "./data/dimitar_bcnogas1/scan_587217/processed/scan587217_frame_manifest.csv",
+    "key_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      25,
+      35
+    ],
+    "visual_review": "./results/dimitar_bcnogas1/scan_587217/key_frames_v1/STAGE1_VISUAL_REVIEW.md",
+    "config_version": "candidate_v2",
+    "late_cooling_frame": 35,
+    "late_cooling_temperature_C": 73.9,
+    "anchor_policy": "Persistent/high-temperature features use frame 11; features confined to frames 0-1 use frame 0.",
+    "scientific_status": "Windows are scan-specific visual candidates. They require checkpoint overlay/residual review before selected-frame fitting."
+  }
+}
