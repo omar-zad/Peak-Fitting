@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software or its example data, please cite it as below."
+type: software
+title: "Constrained GIWAXS peak fitting"
+abstract: >-
+  A reproducible workflow for constrained peak fitting of one-dimensional GIWAXS
+  line profiles. It compares Gaussian, Lorentzian and pseudo-Voigt line shapes by
+  BIC within local q-windows, tests each component by leave-one-component-out
+  refitting, and separates internal fitted values from values that pass explicit
+  reporting gates.
+authors:
+  - given-names: Omar
+    family-names: "REPLACE_WITH_YOUR_FAMILY_NAME"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/omar-zad/Peak-Fitting"
+license: MIT
+version: "1.0.0"
+date-released: "2026-09-02"
+keywords:
+  - GIWAXS
+  - grazing-incidence X-ray scattering
+  - peak fitting
+  - line-profile analysis
+  - pseudo-Voigt
+  - model selection
+  - reproducible research
+# After minting a Zenodo DOI for the first release, uncomment and fill in:
+# doi: "10.5281/zenodo.XXXXXXX"

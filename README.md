@@ -1,13 +1,14 @@
 # Constrained GIWAXS peak fitting
 
-This private research repository contains the 1D GIWAXS line-profile fitting
+This repository contains the 1D GIWAXS line-profile fitting
 workflow used for a dissertation project. It supports staged fitting of FR,
 IP and OOP profiles using constrained Gaussian, Lorentzian and pseudo-Voigt
 models, visual residual checks and conservative result reporting.
 
-The repository is intentionally private. It contains small processed example
-line cuts, but no raw detector images, Nexus/HDF5 files or unrestricted source
-data.
+It contains small processed example line cuts, but no raw detector images,
+NeXus/HDF5 files or unrestricted source data. The software and the example data
+are licensed separately: see [LICENSE](LICENSE) and
+[LICENSE-DATA.md](LICENSE-DATA.md).
 
 ## What the workflow does
 
@@ -29,6 +30,26 @@ number of deterministic multistarts.
 
 Profile selection is made per fitting window using all active frames. It is
 not a majority vote over independently selected profiles for each peak.
+
+## Scope: what generalises and what does not
+
+**The fitter generalises.** `scripts/fitting/fit_giwaxs_series.py` operates on
+any delimited table with q in the first column and one intensity column per
+frame, described by a JSON configuration. Nothing in it is specific to this
+sample, this beamline, or even to GIWAXS: any one-dimensional scattering or
+diffraction profile with locally separable peaks can be fitted. To use it on
+your own measurements you need only your profiles in that layout and a
+configuration written from
+[docs/CONFIGURATION_REFERENCE.md](docs/CONFIGURATION_REFERENCE.md).
+
+**The preparation layer does not generalise.**
+`scripts/preparation/prepare_secondary_scan.py` reads one specific acquisition
+format: an SRS `.dat` header carrying `frameNo` and a `d5i` monitor, a
+temperature table with `frame`, `time_s` and `temp3_C` columns, and per-sector
+`1Dintegrations` CSV exports. It is published so that the provenance of the
+committed inputs is auditable, not as a general-purpose importer. If you are not
+working with that acquisition setup, skip it and hand your own q-plus-frames
+table straight to the fitter.
 
 ## Installation
 
@@ -151,6 +172,9 @@ different sample.
 
 ## Prepare a new secondary scan
 
+This step is specific to the acquisition format described under
+[Scope](#scope-what-generalises-and-what-does-not) above.
+
 Copy the registry template and replace its placeholder paths with local paths:
 
 ```bash
@@ -186,6 +210,19 @@ For secondary-sample reports, use `accepted_peak_positions_after_visual_qc.csv`
 when present. A nonblank internal `q0_fit_Ainv` is not automatically an
 accepted scientific result; the conservative gate uses `q0_reported_Ainv`.
 
+## Tests
+
+`tests/` re-runs the committed Drop40 FR checkpoint and asserts that the
+line-shape selection, fitted peak centres, detection status and reporting-gate
+outcome still match `example_results/drop40_FR_checkpoint/`.
+
+```bash
+python -m pip install -r requirements-dev.txt
+pytest
+```
+
+The same test runs in continuous integration on Python 3.10, 3.12 and 3.13.
+
 ## Scientific limits
 
 - Confidence intervals are conditional on the selected peak/background model.
@@ -202,9 +239,12 @@ Further details are in [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md),
 [docs/CONFIGURATION_REFERENCE.md](docs/CONFIGURATION_REFERENCE.md) and
 [docs/SCRIPT_MAP.md](docs/SCRIPT_MAP.md).
 
-## Private sharing
+## Licence and citation
 
-This repository is for invite-only dissertation collaboration. See
-[SHARING_NOTICE.md](SHARING_NOTICE.md). Do not change the repository visibility
-or redistribute data without approval from the researcher, supervisor and any
-applicable institution or beamline data policy.
+The software is released under the MIT Licence ([LICENSE](LICENSE)). The example
+data and the committed reference run are released separately under CC BY 4.0
+([LICENSE-DATA.md](LICENSE-DATA.md)), which also records their provenance and
+the limits that still apply to the underlying raw data.
+
+If you use this work, please cite it with the metadata in
+[CITATION.cff](CITATION.cff).
