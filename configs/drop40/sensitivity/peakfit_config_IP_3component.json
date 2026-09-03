@@ -1,0 +1,78 @@
+{
+  "frame_temperatures_C": {
+    "193": 40,
+    "194": 50,
+    "195": 55,
+    "196": 60,
+    "197": 65,
+    "198": 70,
+    "199": 75,
+    "200": 80,
+    "201": 150
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 7,
+    "multistarts_final": 12,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "lamellar_low_q",
+      "title": "IP three-component low-q sensitivity",
+      "q_min": 0.22,
+      "q_max": 0.44,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "q0295_broad_ip",
+          "label": "IP broad low-q component",
+          "q_guess": 0.295,
+          "q_min": 0.28,
+          "q_max": 0.304,
+          "fwhm_guess": 0.065,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.12,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0307_narrow_ip",
+          "label": "IP narrow approximately 0.307 component",
+          "q_guess": 0.307,
+          "q_min": 0.304,
+          "q_max": 0.32,
+          "fwhm_guess": 0.015,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.04,
+          "anchor_temperature_C": 80,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0334",
+          "label": "0.337 to 0.331 shoulder",
+          "q_guess": 0.334,
+          "q_min": 0.325,
+          "q_max": 0.345,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.045,
+          "anchor_temperature_C": 40
+        }
+      ]
+    }
+  ],
+  "analysis_variant": "IP three-component low-q sensitivity; same q=0.22-0.44 A^-1 window and linear background as the one- and two-component models; bootstrap disabled"
+}

@@ -37,6 +37,8 @@
   conservative numerical acceptance gates.
 - `apply_manual_visual_qc.py`: applies a documented post-fit exclusion list.
 - `build_nine_frame_qc_report.py`: combined Drop40 QC package.
+- `compare_component_models.py`: checks that saved candidate runs use the same
+  q-range and point count, then exports a BIC comparison table and figure.
 - `build_ip_q0306_final_table.py`: targeted final Drop40 IP q approximately
   0.306 table.
 - `summarize_drop40_cross_sector_sensitivity.py`: Drop40 FR/IP/OOP sensitivity

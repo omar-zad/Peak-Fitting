@@ -91,6 +91,48 @@ python scripts/fitting/fit_giwaxs_series.py \
 Replace `FR` with `IP` or `OOP` in both the input and configuration filename
 to run the other cuts.
 
+## Reproduce the Drop40 IP component-count comparison
+
+The retained IP low-q model contains two components. Its component count was
+checked by fitting one-, two- and three-component alternatives to the same
+`q = 0.22-0.44 A^-1` data points in all nine frames, with the same linear
+background and Gaussian/Lorentzian/pseudo-Voigt profile comparison. Bootstrap
+was disabled because this is a model-selection test.
+
+```bash
+python scripts/fitting/fit_giwaxs_series.py \
+  example_data/drop40/drop40_IP_9frames_norm.txt \
+  --config configs/drop40/sensitivity/peakfit_config_IP_1component.json \
+  --outdir local_results/IP_1component \
+  --stage all --confirm-first-fit --bootstrap 0
+
+python scripts/fitting/fit_giwaxs_series.py \
+  example_data/drop40/drop40_IP_9frames_norm.txt \
+  --config configs/drop40/peakfit_config_IP_revised.json \
+  --outdir local_results/IP_2component \
+  --stage all --confirm-first-fit --bootstrap 0
+
+python scripts/fitting/fit_giwaxs_series.py \
+  example_data/drop40/drop40_IP_9frames_norm.txt \
+  --config configs/drop40/sensitivity/peakfit_config_IP_3component.json \
+  --outdir local_results/IP_3component \
+  --stage all --confirm-first-fit --bootstrap 0
+
+python scripts/reporting/compare_component_models.py \
+  --run one=local_results/IP_1component \
+  --run two=local_results/IP_2component \
+  --run three=local_results/IP_3component \
+  --outdir local_results/IP_component_count_comparison \
+  --title "Drop40 IP low-q component-count decision"
+```
+
+The recorded BIC values were 905.2, 474.8 and 503.2 for one, two and three
+components, respectively. The two-component model was therefore preferred by
+Delta BIC 430.4 over one component and 28.5 over three components. Candidate
+profile families were re-evaluated within each component-count model. The
+verified comparison table and figure are committed under
+`example_results/drop40_IP_component_count/`.
+
 ## Run selected frames from another prepared scan
 
 ```bash

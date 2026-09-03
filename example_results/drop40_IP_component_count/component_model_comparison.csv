@@ -1,0 +1,4 @@
+label,result_directory,n_components,n_frames,profile_family,bic,n_points,n_parameters,q_min_Ainv,q_max_Ainv,delta_bic,preferred
+one,local_results/IP_1component,1,9,gaussian,905.206838934116,315,45,0.2247625,0.4364125,430.4451933136007,False
+two,local_results/IP_2component,2,9,gaussian,474.7616456205153,315,72,0.2247625,0.4364125,0.0,True
+three,local_results/IP_3component,3,9,lorentzian,503.24371413572777,315,99,0.2247625,0.4364125,28.48206851521246,False
