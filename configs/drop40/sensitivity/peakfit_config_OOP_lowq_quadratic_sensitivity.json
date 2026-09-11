@@ -1,0 +1,55 @@
+{
+  "frame_temperatures_C": {
+    "193": 40,
+    "194": 50,
+    "195": 55,
+    "196": 60,
+    "197": 65,
+    "198": 70,
+    "199": 75,
+    "200": 80,
+    "201": 150
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 7,
+    "multistarts_final": 12,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "lamellar_low_q",
+      "title": "OOP broad low-q lamellar candidate (quadratic-background sensitivity)",
+      "q_min": 0.22,
+      "q_max": 0.44,
+      "peaks": [
+        {
+          "key": "q0306_broad_oop",
+          "label": "OOP broad low-q component",
+          "q_guess": 0.306,
+          "q_min": 0.28,
+          "q_max": 0.325,
+          "fwhm_guess": 0.07,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.14,
+          "anchor_temperature_C": 150,
+          "provisional_assignment": true
+        }
+      ],
+      "background_order": 2
+    }
+  ],
+  "analysis_variant": "OOP low-q quadratic-background sensitivity check only"
+}

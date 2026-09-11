@@ -10,16 +10,17 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_ROOT = PROJECT_ROOT / "configs"
-BASE_CONFIG = CONFIG_ROOT / "base" / "peakfit_config.json"
+DROP40_ROOT = CONFIG_ROOT / "drop40"
+BASE_CONFIG = DROP40_ROOT / "base" / "peakfit_config.json"
 
 
 def write_config(name: str, config: dict) -> None:
     if name.endswith("_revised.json"):
-        directory = CONFIG_ROOT / "production"
+        directory = DROP40_ROOT
     elif name == "peakfit_config_OOP.json":
-        directory = CONFIG_ROOT / "base"
+        directory = DROP40_ROOT / "base"
     else:
-        directory = CONFIG_ROOT / "sensitivity"
+        directory = DROP40_ROOT / "sensitivity"
     directory.mkdir(parents=True, exist_ok=True)
     path = directory / name
     path.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
@@ -387,6 +388,82 @@ def main() -> None:
     )
     ip["windows"] = revised_ip_windows(ip)
     write_config("peakfit_config_IP_revised.json", ip)
+
+    ip_one = copy.deepcopy(ip)
+    ip_one["analysis_variant"] = (
+        "IP one-component low-q sensitivity; same q=0.22-0.44 A^-1 "
+        "window and linear background as the two- and three-component "
+        "models; bootstrap disabled"
+    )
+    ip_one["windows"] = [
+        {
+            "key": "lamellar_low_q",
+            "title": "IP single-component low-q envelope sensitivity",
+            "q_min": 0.22,
+            "q_max": 0.44,
+            "background_order": 1,
+            "peaks": [
+                {
+                    "key": "low_q_single_envelope_ip",
+                    "label": "IP single low-q envelope",
+                    "q_guess": 0.315,
+                    "q_min": 0.280,
+                    "q_max": 0.345,
+                    "fwhm_guess": 0.075,
+                    "fwhm_min": 0.025,
+                    "fwhm_max": 0.160,
+                    "anchor_temperature_C": 150,
+                    "provisional_assignment": True,
+                }
+            ],
+        }
+    ]
+    write_config("peakfit_config_IP_1component.json", ip_one)
+
+    ip_three = copy.deepcopy(ip)
+    ip_three["analysis_variant"] = (
+        "IP three-component low-q sensitivity; same q=0.22-0.44 A^-1 "
+        "window and linear background as the one- and two-component "
+        "models; bootstrap disabled"
+    )
+    ip_shoulder = copy.deepcopy(lamellar_window(ip)["peaks"][1])
+    ip_three["windows"] = [
+        {
+            "key": "lamellar_low_q",
+            "title": "IP three-component low-q sensitivity",
+            "q_min": 0.22,
+            "q_max": 0.44,
+            "background_order": 1,
+            "peaks": [
+                {
+                    "key": "q0295_broad_ip",
+                    "label": "IP broad low-q component",
+                    "q_guess": 0.295,
+                    "q_min": 0.280,
+                    "q_max": 0.304,
+                    "fwhm_guess": 0.065,
+                    "fwhm_min": 0.025,
+                    "fwhm_max": 0.120,
+                    "anchor_temperature_C": 150,
+                    "provisional_assignment": True,
+                },
+                {
+                    "key": "q0307_narrow_ip",
+                    "label": "IP narrow approximately 0.307 component",
+                    "q_guess": 0.307,
+                    "q_min": 0.304,
+                    "q_max": 0.320,
+                    "fwhm_guess": 0.015,
+                    "fwhm_min": 0.008,
+                    "fwhm_max": 0.040,
+                    "anchor_temperature_C": 80,
+                    "provisional_assignment": True,
+                },
+                ip_shoulder,
+            ],
+        }
+    ]
+    write_config("peakfit_config_IP_3component.json", ip_three)
 
     oop = copy.deepcopy(base)
     oop["analysis_variant"] = (
