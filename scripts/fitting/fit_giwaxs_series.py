@@ -1624,12 +1624,26 @@ def _plot_style() -> None:
     )
 
 
-def plot_window_diagnostics(
+def _evenly_spaced_frame_keys(
+    frames: list[str], maximum: int
+) -> list[str]:
+    """Return acquisition-ordered representative keys, including both ends."""
+    if len(frames) <= maximum:
+        return list(frames)
+    indices = np.linspace(0, len(frames) - 1, maximum)
+    selected = [frames[int(round(index))] for index in indices]
+    return list(dict.fromkeys(selected))
+
+
+def _plot_window_diagnostic_page(
     window: dict[str, Any],
     frame_fits: dict[str, CurveFit],
     detections: dict[str, dict[str, dict[str, Any]]],
     temperatures: dict[str, float],
     output_path: Path,
+    *,
+    title_suffix: str = "",
+    dpi: int = 240,
 ) -> None:
     _plot_style()
     frames = list(frame_fits)
@@ -1698,7 +1712,8 @@ def plot_window_diagnostics(
             else ""
         )
         ax.set_title(
-            f"{temperatures[frame]:g} °C  |  {PROFILE_LABELS[fit.profile]}{eta_text}"
+            f"Frame {frame}  |  {temperatures[frame]:g} °C  |  "
+            f"{PROFILE_LABELS[fit.profile]}{eta_text}"
         )
         ax.set_ylabel("Intensity (a.u.)")
         ax.grid(alpha=0.16, lw=0.6)
@@ -1727,8 +1742,13 @@ def plot_window_diagnostics(
         )
         empty_ax.axis("off")
 
+    title = (
+        f"{window['title']}: observed data, fitted components, and residuals"
+    )
+    if title_suffix:
+        title += f"\n{title_suffix}"
     fig.suptitle(
-        f"{window['title']}: observed data, fitted components, and residuals",
+        title,
         fontsize=13,
         y=0.995,
     )
@@ -1741,16 +1761,76 @@ def plot_window_diagnostics(
         frameon=False,
         bbox_to_anchor=(0.5, -0.005),
     )
-    fig.subplots_adjust(top=0.94, bottom=0.09)
-    fig.savefig(output_path, dpi=240, bbox_inches="tight")
+    # A single-row diagnostic needs extra headroom so its panel titles do not
+    # collide with the figure title. Multi-row pages retain the compact layout.
+    fig.subplots_adjust(top=0.87 if rows == 1 else 0.94, bottom=0.09)
+    fig.savefig(output_path, dpi=dpi, bbox_inches="tight")
     plt.close(fig)
 
 
-def plot_series_overview(
+def plot_window_diagnostics(
+    window: dict[str, Any],
+    frame_fits: dict[str, CurveFit],
+    detections: dict[str, dict[str, dict[str, Any]]],
+    temperatures: dict[str, float],
+    output_path: Path,
+) -> None:
+    """Plot every fit without constructing an unmanageably tall figure."""
+    frames = list(frame_fits)
+    frames_per_page = 16
+    if len(frames) <= frames_per_page:
+        _plot_window_diagnostic_page(
+            window,
+            frame_fits,
+            detections,
+            temperatures,
+            output_path,
+        )
+        return
+
+    representative_frames = _evenly_spaced_frame_keys(frames, 12)
+    _plot_window_diagnostic_page(
+        window,
+        {frame: frame_fits[frame] for frame in representative_frames},
+        detections,
+        temperatures,
+        output_path,
+        title_suffix=(
+            f"Representative overview: {len(representative_frames)} of "
+            f"{len(frames)} frames; see {output_path.stem}_pages for every frame"
+        ),
+        dpi=220,
+    )
+
+    pages_dir = output_path.parent / f"{output_path.stem}_pages"
+    pages_dir.mkdir(parents=True, exist_ok=True)
+    total_pages = int(np.ceil(len(frames) / frames_per_page))
+    for page_index, start in enumerate(
+        range(0, len(frames), frames_per_page), start=1
+    ):
+        page_frames = frames[start : start + frames_per_page]
+        _plot_window_diagnostic_page(
+            window,
+            {frame: frame_fits[frame] for frame in page_frames},
+            detections,
+            temperatures,
+            pages_dir / f"page_{page_index:03d}.png",
+            title_suffix=(
+                f"All-frame diagnostics, page {page_index} of {total_pages}; "
+                f"frames {page_frames[0]}-{page_frames[-1]}"
+            ),
+            dpi=200,
+        )
+
+
+def _plot_series_overview_page(
     q: np.ndarray,
     frames: dict[str, np.ndarray],
     temperatures: dict[str, float],
     output_path: Path,
+    *,
+    title_suffix: str = "",
+    dpi: int = 240,
 ) -> None:
     _plot_style()
     frame_count = len(frames)
@@ -1773,9 +1853,60 @@ def plot_series_overview(
         ax.set_ylabel("Intensity (a.u.)")
     for ax in axes.flat[frame_count:]:
         ax.set_visible(False)
-    fig.suptitle("Unsmoothed, un-offset GIWAXS line cuts", fontsize=13)
-    fig.savefig(output_path, dpi=240, bbox_inches="tight")
+    title = "Unsmoothed, un-offset GIWAXS line cuts"
+    if title_suffix:
+        title += f"\n{title_suffix}"
+    fig.suptitle(title, fontsize=13)
+    fig.savefig(output_path, dpi=dpi, bbox_inches="tight")
     plt.close(fig)
+
+
+def plot_series_overview(
+    q: np.ndarray,
+    frames: dict[str, np.ndarray],
+    temperatures: dict[str, float],
+    output_path: Path,
+) -> None:
+    """Plot a compact overview plus paginated raw curves for long series."""
+    frame_keys = list(frames)
+    frames_per_page = 20
+    if len(frame_keys) <= frames_per_page:
+        _plot_series_overview_page(
+            q, frames, temperatures, output_path
+        )
+        return
+
+    representative_frames = _evenly_spaced_frame_keys(frame_keys, 12)
+    _plot_series_overview_page(
+        q,
+        {frame: frames[frame] for frame in representative_frames},
+        temperatures,
+        output_path,
+        title_suffix=(
+            f"Representative overview: {len(representative_frames)} of "
+            f"{len(frame_keys)} frames; see {output_path.stem}_pages for every frame"
+        ),
+        dpi=220,
+    )
+
+    pages_dir = output_path.parent / f"{output_path.stem}_pages"
+    pages_dir.mkdir(parents=True, exist_ok=True)
+    total_pages = int(np.ceil(len(frame_keys) / frames_per_page))
+    for page_index, start in enumerate(
+        range(0, len(frame_keys), frames_per_page), start=1
+    ):
+        page_frames = frame_keys[start : start + frames_per_page]
+        _plot_series_overview_page(
+            q,
+            {frame: frames[frame] for frame in page_frames},
+            temperatures,
+            pages_dir / f"page_{page_index:03d}.png",
+            title_suffix=(
+                f"All-frame raw curves, page {page_index} of {total_pages}; "
+                f"frames {page_frames[0]}-{page_frames[-1]}"
+            ),
+            dpi=200,
+        )
 
 
 def _peak_order(config: dict[str, Any]) -> list[tuple[str, str, str]]:
@@ -1791,6 +1922,7 @@ def plot_parameter_small_multiples(
     config: dict[str, Any],
     output_path: Path,
     metric: str,
+    x_axis: str = "temperature",
 ) -> None:
     _plot_style()
     peak_order = _peak_order(config)
@@ -1809,38 +1941,50 @@ def plot_parameter_small_multiples(
             "low": "area_in_window_ci95_low",
             "high": "area_in_window_ci95_high",
             "ylabel": "Integrated intensity\n(in fitted q-window)",
-            "title": "Peak area versus temperature",
+            "title": "Peak area",
         },
         "position": {
             "value": "q0_reported_Ainv",
             "low": "q0_ci95_low_Ainv",
             "high": "q0_ci95_high_Ainv",
             "ylabel": r"$q_0$ ($\mathrm{\AA}^{-1}$)",
-            "title": "Reportable peak position versus temperature",
+            "title": "Reportable peak position",
         },
         "fwhm": {
             "value": "apparent_fwhm_reported_Ainv",
             "low": "apparent_fwhm_ci95_low_Ainv",
             "high": "apparent_fwhm_ci95_high_Ainv",
             "ylabel": r"Apparent FWHM ($\mathrm{\AA}^{-1}$)",
-            "title": "Reportable apparent FWHM versus temperature",
+            "title": "Reportable apparent FWHM",
         },
     }[metric]
 
     for ax, (window, peak, label) in zip(axes.flat, peak_order):
         data = parameters[
             (parameters["window"] == window) & (parameters["peak"] == peak)
-        ].sort_values("temperature_C")
+        ].copy()
+        data["frame_number"] = data["frame"].map(
+            lambda value: int(canonical_frame(value))
+        )
+        if x_axis == "frame":
+            data = data.sort_values("frame_number")
+            x_value = data["frame_number"].to_numpy(float)
+            x_label = "Acquisition frame (zero-indexed)"
+        elif x_axis == "temperature":
+            data = data.sort_values("temperature_C")
+            x_value = data["temperature_C"].to_numpy(float)
+            x_label = "Nominal temperature (°C)"
+        else:
+            raise ValueError(f"Unsupported parameter-plot x-axis: {x_axis}")
         value = data[settings["value"]].to_numpy(float)
         low = data[settings["low"]].to_numpy(float)
         high = data[settings["high"]].to_numpy(float)
-        temperature = data["temperature_C"].to_numpy(float)
         valid = np.isfinite(value)
         lower_error = np.maximum(value - low, 0)
         upper_error = np.maximum(high - value, 0)
         error = np.vstack([lower_error, upper_error])
         ax.errorbar(
-            temperature[valid],
+            x_value[valid],
             value[valid],
             yerr=error[:, valid] if valid.any() else None,
             color="#0072B2",
@@ -1858,7 +2002,7 @@ def plot_parameter_small_multiples(
             ).to_numpy()
             absent = data["detection_status"].eq("not_detected").to_numpy()
             ax.scatter(
-                temperature[tentative],
+                x_value[tentative],
                 value[tentative],
                 marker="^",
                 facecolors="white",
@@ -1867,7 +2011,7 @@ def plot_parameter_small_multiples(
                 s=28,
             )
             ax.scatter(
-                temperature[fixed_shape],
+                x_value[fixed_shape],
                 value[fixed_shape],
                 marker="s",
                 facecolors="white",
@@ -1880,7 +2024,7 @@ def plot_parameter_small_multiples(
                 ~np.isfinite(upper_limit)
             ]
             ax.scatter(
-                temperature[absent],
+                x_value[absent],
                 upper_limit[absent],
                 marker="v",
                 facecolors="white",
@@ -1902,12 +2046,15 @@ def plot_parameter_small_multiples(
             )
         ax.set_title(label)
         ax.grid(alpha=0.18, lw=0.6)
-        ax.set_xlabel("Nominal temperature (°C)")
+        ax.set_xlabel(x_label)
         ax.set_ylabel(settings["ylabel"])
 
     for ax in axes.flat[len(peak_order) :]:
         ax.set_visible(False)
-    fig.suptitle(settings["title"], fontsize=13)
+    axis_title = (
+        "acquisition frame" if x_axis == "frame" else "temperature"
+    )
+    fig.suptitle(f"{settings['title']} versus {axis_title}", fontsize=13)
     if metric == "area":
         status_handles = [
             Line2D(
@@ -2021,7 +2168,13 @@ def plot_model_selection(
     plt.close(fig)
 
 
-def plot_qc_heatmap(quality: pd.DataFrame, output_path: Path) -> None:
+def _plot_qc_heatmap_page(
+    quality: pd.DataFrame,
+    output_path: Path,
+    *,
+    title_suffix: str = "",
+    dpi: int = 240,
+) -> None:
     _plot_style()
     working = quality.copy()
     working["frame_key"] = working["frame"].map(canonical_frame)
@@ -2061,9 +2214,13 @@ def plot_qc_heatmap(quality: pd.DataFrame, output_path: Path) -> None:
     ax.set_yticks(np.arange(len(pivot.index)))
     ax.set_yticklabels(pivot.index)
     ax.set_xlabel("Frame and measured temperature")
-    ax.set_title(
-        "Empirical reduced chi-square (noise estimated locally; use comparatively)"
+    title = (
+        "Empirical reduced chi-square "
+        "(noise estimated locally; use comparatively)"
     )
+    if title_suffix:
+        title += f"\n{title_suffix}"
+    ax.set_title(title)
     for row in range(values.shape[0]):
         for column in range(values.shape[1]):
             value = values[row, column]
@@ -2080,8 +2237,53 @@ def plot_qc_heatmap(quality: pd.DataFrame, output_path: Path) -> None:
                 )
     colorbar = fig.colorbar(image, ax=ax, shrink=0.82)
     colorbar.set_label("Empirical reduced χ²")
-    fig.savefig(output_path, dpi=240, bbox_inches="tight")
+    fig.savefig(output_path, dpi=dpi, bbox_inches="tight")
     plt.close(fig)
+
+
+def plot_qc_heatmap(quality: pd.DataFrame, output_path: Path) -> None:
+    """Plot a readable QC overview and paginate long acquisitions."""
+    working = quality.copy()
+    working["frame_key"] = working["frame"].map(canonical_frame)
+    frame_order = list(dict.fromkeys(working["frame_key"]))
+    frames_per_page = 25
+    if len(frame_order) <= frames_per_page:
+        _plot_qc_heatmap_page(quality, output_path)
+        return
+
+    representative_frames = _evenly_spaced_frame_keys(frame_order, 20)
+    representative = working[
+        working["frame_key"].isin(representative_frames)
+    ].drop(columns="frame_key")
+    _plot_qc_heatmap_page(
+        representative,
+        output_path,
+        title_suffix=(
+            f"Representative overview: {len(representative_frames)} of "
+            f"{len(frame_order)} frames; see {output_path.stem}_pages for every frame"
+        ),
+        dpi=220,
+    )
+
+    pages_dir = output_path.parent / f"{output_path.stem}_pages"
+    pages_dir.mkdir(parents=True, exist_ok=True)
+    total_pages = int(np.ceil(len(frame_order) / frames_per_page))
+    for page_index, start in enumerate(
+        range(0, len(frame_order), frames_per_page), start=1
+    ):
+        page_frames = frame_order[start : start + frames_per_page]
+        page = working[
+            working["frame_key"].isin(page_frames)
+        ].drop(columns="frame_key")
+        _plot_qc_heatmap_page(
+            page,
+            pages_dir / f"page_{page_index:03d}.png",
+            title_suffix=(
+                f"All-frame QC, page {page_index} of {total_pages}; "
+                f"frames {page_frames[0]}-{page_frames[-1]}"
+            ),
+            dpi=220,
+        )
 
 
 def plot_first_frame_diagnostic(
@@ -2442,22 +2644,30 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Path]:
         q = q_all[mask]
         temperature_min = float(window.get("temperature_min_C", -np.inf))
         temperature_max = float(window.get("temperature_max_C", np.inf))
+        # Optional explicit acquisition-frame gate (zero-based, inclusive).
+        # It complements the temperature gate for isothermal holds in which
+        # the pattern changes with time rather than temperature; a window
+        # without frame_min/frame_max behaves exactly as before.
+        frame_min = int(window.get("frame_min", -1))
+        frame_max = int(window.get("frame_max", 10**9))
         window_frames = [
             frame
             for frame in frames_all
             if temperature_min <= temperatures[frame] <= temperature_max
+            and frame_min <= int(canonical_frame(frame)) <= frame_max
         ]
         if not window_frames:
             if args.stage == "first":
                 print(
                     f"[skip] {window['key']}: checkpoint frame is outside "
-                    "the configured temperature range"
+                    "the configured temperature/frame range"
                 )
                 continue
             raise ValueError(
                 f"{window['key']}: no frames fall within configured "
                 f"temperature range {temperature_min:g} to "
-                f"{temperature_max:g} C"
+                f"{temperature_max:g} C and frame range "
+                f"{frame_min} to {frame_max}"
             )
         frame_data = {
             frame: frames_all[frame][mask] for frame in window_frames
@@ -2667,6 +2877,27 @@ def run_pipeline(args: argparse.Namespace) -> dict[str, Path]:
             config,
             figures_dir / "apparent_fwhm_vs_temperature.png",
             metric="fwhm",
+        )
+        plot_parameter_small_multiples(
+            parameters,
+            config,
+            figures_dir / "peak_area_vs_frame.png",
+            metric="area",
+            x_axis="frame",
+        )
+        plot_parameter_small_multiples(
+            parameters,
+            config,
+            figures_dir / "peak_position_vs_frame.png",
+            metric="position",
+            x_axis="frame",
+        )
+        plot_parameter_small_multiples(
+            parameters,
+            config,
+            figures_dir / "apparent_fwhm_vs_frame.png",
+            metric="fwhm",
+            x_axis="frame",
         )
     plot_model_selection(
         model_selection, figures_dir / "profile_model_selection.png"
