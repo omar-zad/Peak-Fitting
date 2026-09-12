@@ -11,8 +11,13 @@ The following are data, not software:
 
 - `example_data/drop40/` — processed one-dimensional FR, IP and OOP line cuts
   for the nine-frame Drop40 temperature series, plus the frame manifest.
+- `example_data/secondary_scan/` — the frame manifest of scan 587178 (frame
+  times, measured temperatures, phase labels and monitor counts; no
+  intensities), used to exercise the configuration builders.
 - `example_results/drop40_FR_checkpoint/` — the committed reference run derived
-  from that data.
+  from the Drop40 data.
+- `example_results/drop40_IP_component_count/` — the committed component-count
+  comparison derived from the Drop40 IP data.
 
 ## Terms
 
