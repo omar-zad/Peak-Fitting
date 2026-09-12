@@ -16,9 +16,9 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SOURCE_CONFIGS = {
-    "FR": PROJECT_ROOT / "configs" / "production" / "peakfit_config_FR_revised.json",
-    "IP": PROJECT_ROOT / "configs" / "production" / "peakfit_config_IP_revised.json",
-    "OOP": PROJECT_ROOT / "configs" / "production" / "peakfit_config_OOP_revised.json",
+    "FR": PROJECT_ROOT / "configs" / "drop40" / "peakfit_config_FR_revised.json",
+    "IP": PROJECT_ROOT / "configs" / "drop40" / "peakfit_config_IP_revised.json",
+    "OOP": PROJECT_ROOT / "configs" / "drop40" / "peakfit_config_OOP_revised.json",
 }
 
 

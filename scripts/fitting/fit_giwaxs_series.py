@@ -32,7 +32,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import os
 import platform
 import re
@@ -44,7 +43,6 @@ from pathlib import Path
 from typing import Any, Iterable
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CONFIG = PROJECT_ROOT / "configs" / "base" / "peakfit_config.json"
 
 os.environ.setdefault(
     "MPLCONFIGDIR",
@@ -66,11 +64,6 @@ PROFILE_LABELS = {
     "gaussian": "Gaussian",
     "lorentzian": "Lorentzian",
     "pseudo_voigt": "pseudo-Voigt",
-}
-PROFILE_COMPLEXITY = {
-    "gaussian": 0,
-    "lorentzian": 0,
-    "pseudo_voigt": 1,
 }
 COMPONENT_COLORS = [
     "#0072B2",
@@ -3045,12 +3038,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("input", help="Tab-delimited text/CSV input (or Excel if supported)")
     parser.add_argument(
         "--config",
-        default=str(DEFAULT_CONFIG),
+        required=True,
         help="JSON file defining frame temperatures, windows, peaks, and bounds",
     )
     parser.add_argument(
         "--outdir",
-        default=str(PROJECT_ROOT / "results" / "drop40" / "example_run"),
+        required=True,
         help="Output directory (created if needed)",
     )
     parser.add_argument(

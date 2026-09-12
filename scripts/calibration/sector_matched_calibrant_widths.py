@@ -377,9 +377,7 @@ def run(args: argparse.Namespace) -> None:
 
 
 def parser() -> argparse.ArgumentParser:
-    output_default = (
-        PROJECT_ROOT / "results" / "calibration" / "sector_matched_calibrants"
-    )
+    output_default = PROJECT_ROOT / "local_results" / "calibration"
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument(
         "--poni",

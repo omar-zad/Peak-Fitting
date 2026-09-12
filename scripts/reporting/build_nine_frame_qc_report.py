@@ -30,7 +30,6 @@ background/window sensitivity review remain necessary.
 from __future__ import annotations
 
 import argparse
-import math
 import os
 import re
 from pathlib import Path
@@ -75,13 +74,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--analysis-root",
         type=Path,
-        default=(
-            PROJECT_ROOT
-            / "results"
-            / "drop40"
-            / "analysis_9frame_fast"
-        ),
-        help="Folder containing final and candidate run directories.",
+        default=PROJECT_ROOT / "local_results",
+        help="Folder containing the nine-frame run directories.",
     )
     parser.add_argument(
         "--input",
@@ -90,18 +84,13 @@ def parse_args() -> argparse.Namespace:
         metavar="CUT=PATH",
         help=(
             "Final result directory for a cut; repeat for FR, IP and OOP. "
-            "Defaults to CUT_revised under --analysis-root."
+            "Defaults to drop40_CUT_all under --analysis-root."
         ),
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=(
-            PROJECT_ROOT
-            / "results"
-            / "drop40"
-            / "analysis_9frame_qc_report"
-        ),
+        default=PROJECT_ROOT / "local_results" / "drop40_qc_report",
         help="Destination for combined tables, report, and figures.",
     )
     return parser.parse_args()
@@ -112,7 +101,7 @@ def parse_final_inputs(
 ) -> dict[str, Path]:
     if not specifications:
         return {
-            cut: analysis_root / f"{cut}_revised" for cut in DEFAULT_CUTS
+            cut: analysis_root / f"drop40_{cut}_all" for cut in DEFAULT_CUTS
         }
 
     inputs: dict[str, Path] = {}

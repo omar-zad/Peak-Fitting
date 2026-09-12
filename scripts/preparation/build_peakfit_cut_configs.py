@@ -3,24 +3,28 @@
 
 from __future__ import annotations
 
+import argparse
 import copy
 import json
 from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-CONFIG_ROOT = PROJECT_ROOT / "configs"
-DROP40_ROOT = CONFIG_ROOT / "drop40"
+DROP40_ROOT = PROJECT_ROOT / "configs" / "drop40"
 BASE_CONFIG = DROP40_ROOT / "base" / "peakfit_config.json"
+
+# Set by main() from --output-root; defaults to the committed location so that
+# running the script with no arguments regenerates the committed files in place.
+OUTPUT_ROOT = DROP40_ROOT
 
 
 def write_config(name: str, config: dict) -> None:
     if name.endswith("_revised.json"):
-        directory = DROP40_ROOT
+        directory = OUTPUT_ROOT
     elif name == "peakfit_config_OOP.json":
-        directory = DROP40_ROOT / "base"
+        directory = OUTPUT_ROOT / "base"
     else:
-        directory = DROP40_ROOT / "sensitivity"
+        directory = OUTPUT_ROOT / "sensitivity"
     directory.mkdir(parents=True, exist_ok=True)
     path = directory / name
     path.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
@@ -338,6 +342,18 @@ def revised_ip_windows(config: dict) -> list[dict]:
 
 
 def main() -> None:
+    global OUTPUT_ROOT
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--output-root",
+        type=Path,
+        default=DROP40_ROOT,
+        help=(
+            "Directory that receives the revised configs, with base/ and "
+            "sensitivity/ subfolders (default: configs/drop40)."
+        ),
+    )
+    OUTPUT_ROOT = parser.parse_args().output_root.expanduser().resolve()
     base = json.loads(BASE_CONFIG.read_text(encoding="utf-8"))
 
     fr_two = copy.deepcopy(base)

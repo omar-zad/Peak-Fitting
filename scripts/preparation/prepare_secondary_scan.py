@@ -575,10 +575,10 @@ def prepare(args: argparse.Namespace) -> dict[str, Path]:
         args.output_dir.expanduser().resolve()
         if args.output_dir is not None
         else PROJECT_ROOT
-        / "data"
+        / "local_results"
+        / "prepared"
         / entry["sample_slug"]
         / f"scan_{args.scan}"
-        / "processed"
     )
     output_dir.mkdir(parents=True, exist_ok=True)
     outputs: dict[str, Path] = {}

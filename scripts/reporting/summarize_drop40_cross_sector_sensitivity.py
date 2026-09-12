@@ -12,13 +12,10 @@ import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_ROOT = (
-    PROJECT_ROOT
-    / "results"
-    / "drop40"
-    / "analysis_9frame_fast"
-    / "cross_sector_0459_0480_sensitivity"
-)
+# Layout expected under --root: <root>/IP and <root>/OOP hold the selected-frame
+# cross-sector runs, and the sibling directories <root>/../drop40_IP_all and
+# <root>/../drop40_OOP_all hold the nine-frame baseline runs from the README.
+DEFAULT_ROOT = PROJECT_ROOT / "local_results" / "cross_sector_0459_0480_sensitivity"
 
 
 CUTS = {
@@ -30,7 +27,7 @@ CUTS = {
         "established_label": r"established $q\approx0.481$ OOP peak",
         "other_peak": "q0536_oop",
         "other_label": r"established $q\approx0.535$ OOP peak",
-        "baseline_dir": "OOP_revised",
+        "baseline_dir": "drop40_OOP_all",
         "baseline_window": "heated_low_q_0480_0536",
         "baseline_peak": "q0480",
     },
@@ -42,16 +39,11 @@ CUTS = {
         "established_label": r"established $q\approx0.459$ IP peak",
         "other_peak": "q0520_ip",
         "other_label": "existing higher-q IP component",
-        "baseline_dir": "IP_revised",
+        "baseline_dir": "drop40_IP_all",
         "baseline_window": "heated_low_q_ip",
         "baseline_peak": "q0461_ip",
     },
 }
-
-
-def _parameter_subset(path: Path, peak: str) -> pd.DataFrame:
-    table = pd.read_csv(path)
-    return table.loc[table["peak"].eq(peak)].copy()
 
 
 def build_summary(root: Path) -> pd.DataFrame:

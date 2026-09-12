@@ -11,6 +11,7 @@ results/
 
 # Raw or externally supplied experimental data must stay outside Git.
 external_data/
+data/
 raw_data/
 *.h5
 *.hdf5

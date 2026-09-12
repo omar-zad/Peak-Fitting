@@ -226,7 +226,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=PROJECT_ROOT / "data" / "drop40" / "processed",
+        default=PROJECT_ROOT / "local_results" / "drop40_inputs",
         help="Destination for the three input tables and manifest",
     )
     return parser

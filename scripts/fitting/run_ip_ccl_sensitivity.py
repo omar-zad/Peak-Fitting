@@ -16,23 +16,11 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BASE_CONFIG = (
-    PROJECT_ROOT / "configs" / "production" / "peakfit_config_IP_revised.json"
+    PROJECT_ROOT / "configs" / "drop40" / "peakfit_config_IP_revised.json"
 )
-INPUT = (
-    PROJECT_ROOT
-    / "data"
-    / "drop40"
-    / "processed"
-    / "drop40_IP_9frames_norm.txt"
-)
+INPUT = PROJECT_ROOT / "example_data" / "drop40" / "drop40_IP_9frames_norm.txt"
 FIT_SCRIPT = PROJECT_ROOT / "scripts" / "fitting" / "fit_giwaxs_series.py"
-OUT = (
-    PROJECT_ROOT
-    / "results"
-    / "drop40"
-    / "analysis_9frame_fast"
-    / "IP_CCL_sensitivity"
-)
+OUT = PROJECT_ROOT / "local_results" / "IP_CCL_sensitivity"
 
 
 VARIANTS = {

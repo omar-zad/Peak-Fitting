@@ -21,7 +21,7 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CUTS = ("FR", "IP", "OOP")
 DEFAULT_TEMPLATE_DIR = (
-    PROJECT_ROOT / "configs" / "in_situ" / "scan_587214" / "representative"
+    PROJECT_ROOT / "configs" / "secondary_samples" / "scan_587214" / "representative"
 )
 
 
