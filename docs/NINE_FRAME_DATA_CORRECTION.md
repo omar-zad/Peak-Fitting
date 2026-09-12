@@ -14,24 +14,25 @@ The final Drop40 temperature series is:
 | 200 | 587200 | 80 | 79.2 |
 | 201 | 587201 | 150 | 145.4 |
 
-The old `data/drop40/provenance/drop40_FR.txt` contains frames 193–200 only. Its previous fitting
-configuration incorrectly associated frame 199 with 80 °C and frame 200 with
-150 °C. It is retained solely for provenance.
+An earlier eight-frame export, kept only in the private working tree, contained
+frames 193-200 and its fitting configuration incorrectly associated frame 199
+with 80 °C and frame 200 with 150 °C. Every result produced from it is
+superseded.
 
-Use the corrected inputs in `data/drop40/processed/`:
+The corrected inputs are committed in `example_data/drop40/`:
 
-- `drop40_FR_9frames.txt`
-- `drop40_IP_9frames.txt`
-- `drop40_OOP_9frames.txt`
 - `drop40_FR_9frames_norm.txt`
 - `drop40_IP_9frames_norm.txt`
 - `drop40_OOP_9frames_norm.txt`
 - `drop40_9frame_manifest.csv`
 
-Regenerate them from the original sector CSVs with:
+They can be regenerated from the original sector CSV exports, which are not in
+this repository, with:
 
 ```bash
-python3 scripts/preparation/build_drop40_nine_frame_inputs.py
+python scripts/preparation/build_drop40_nine_frame_inputs.py \
+  --data-root /path/to/external_data \
+  --output-dir example_data/drop40
 ```
 
 The source exposure time and transmission are constant across the nine scans.
