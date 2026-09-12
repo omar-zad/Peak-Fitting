@@ -241,7 +241,7 @@
     "sample_label": "Dimitar_bc",
     "cut": "OOP",
     "series_type": "secondary_in_situ_time_series",
-    "frame_manifest": "./data/dimitar_bc/scan_587178/processed/scan587178_frame_manifest.csv",
+    "frame_manifest": "<private-working-tree>/data/dimitar_bc/scan_587178/processed/scan587178_frame_manifest.csv",
     "key_frames": [
       0,
       5,
@@ -254,7 +254,7 @@
     ],
     "anchor_frame": 60,
     "anchor_temperature_C": 83.4,
-    "template_config": "./configs/in_situ/scan_587214/representative/scan587214_OOP_keyframes.json",
+    "template_config": "./configs/secondary_samples/scan_587214/representative/scan587214_OOP_keyframes.json",
     "scientific_status": "Candidate windows transferred from scan 587214 for consistent screening; peak count, bounds and background must be accepted or revised from this sample's own key-frame overlays."
   }
 }

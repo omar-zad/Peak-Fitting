@@ -350,7 +350,7 @@
     "sample_label": "Dimitar_nogas",
     "cut": "FR",
     "series_type": "secondary_in_situ_time_series",
-    "frame_manifest": "./data/dimitar_nogas_587207/scan_587207/processed/scan587207_frame_manifest.csv",
+    "frame_manifest": "<private-working-tree>/data/dimitar_nogas_587207/scan_587207/processed/scan587207_frame_manifest.csv",
     "key_frames": [
       0,
       1,
@@ -364,8 +364,8 @@
     ],
     "anchor_frame": 10,
     "anchor_temperature_C": 83.7,
-    "template_config": "./configs/in_situ/scan_587214/representative/scan587214_FR_keyframes.json",
+    "template_config": "./configs/secondary_samples/scan_587214/representative/scan587214_FR_keyframes.json",
     "scientific_status": "Candidate v5: early/late regimes are separated after selected-frame residual QC; absent transient components are no longer fit outside their observed regime.",
-    "source_candidate_config": "./configs/secondary_samples/scan_587207/candidate_v4/scan587207_FR_candidate_keyframes.json"
+    "source_candidate_config": "<private-working-tree>/configs/secondary_samples/scan_587207/candidate_v4/scan587207_FR_candidate_keyframes.json"
   }
 }

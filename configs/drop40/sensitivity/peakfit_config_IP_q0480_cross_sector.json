@@ -1,0 +1,81 @@
+{
+  "analysis_variant": "DROP40 IP reciprocal cross-sector sensitivity test for q approximately 0.480 A^-1",
+  "frame_temperatures_C": {
+    "193": 40,
+    "194": 50,
+    "195": 55,
+    "196": 60,
+    "197": 65,
+    "198": 70,
+    "199": 75,
+    "200": 80,
+    "201": 150
+  },
+  "profiles_to_compare": [
+    "gaussian"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 7,
+    "multistarts_final": 12,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "cross_sector_low_q_ip",
+      "title": "IP sensitivity: added q = 0.480 A^-1 component",
+      "q_min": 0.44,
+      "q_max": 0.57,
+      "temperature_min_C": 65,
+      "profiles_to_compare": [
+        "gaussian"
+      ],
+      "peaks": [
+        {
+          "key": "q0459_ip",
+          "label": "established IP component near 0.459",
+          "q_guess": 0.459,
+          "q_min": 0.448,
+          "q_max": 0.469,
+          "fwhm_guess": 0.015,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.04,
+          "anchor_temperature_C": 80,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0480_ip_test",
+          "label": "added IP test component near 0.480",
+          "q_guess": 0.481,
+          "q_min": 0.47,
+          "q_max": 0.495,
+          "fwhm_guess": 0.013,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.04,
+          "anchor_temperature_C": 80,
+          "provisional_assignment": true
+        },
+        {
+          "key": "q0520_ip",
+          "label": "existing higher-q IP component",
+          "q_guess": 0.52,
+          "q_min": 0.5,
+          "q_max": 0.545,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.01,
+          "fwhm_max": 0.07,
+          "anchor_temperature_C": 80,
+          "provisional_assignment": true
+        }
+      ],
+      "sensitivity_question": "Does IP require a separately resolved q approximately 0.480 A^-1 component after retaining the established q approximately 0.459 A^-1 and higher-q components?"
+    }
+  ]
+}

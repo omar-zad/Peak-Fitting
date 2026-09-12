@@ -323,7 +323,7 @@
     "sample_label": "Dimitar_nogas",
     "cut": "OOP",
     "series_type": "secondary_in_situ_time_series",
-    "frame_manifest": "./data/dimitar_nogas_587207/scan_587207/processed/scan587207_frame_manifest.csv",
+    "frame_manifest": "<private-working-tree>/data/dimitar_nogas_587207/scan_587207/processed/scan587207_frame_manifest.csv",
     "key_frames": [
       0,
       1,
@@ -337,8 +337,8 @@
     ],
     "anchor_frame": 10,
     "anchor_temperature_C": 83.7,
-    "template_config": "./configs/in_situ/scan_587214/representative/scan587214_OOP_keyframes.json",
+    "template_config": "./configs/secondary_samples/scan_587214/representative/scan587214_OOP_keyframes.json",
     "scientific_status": "Candidate v5: early/late mid-q and high-q regimes are separated after selected-frame residual QC. The early 1.66 A^-1 line remains explicitly under-resolved.",
-    "source_candidate_config": "./configs/secondary_samples/scan_587207/candidate_v4/scan587207_OOP_candidate_keyframes.json"
+    "source_candidate_config": "<private-working-tree>/configs/secondary_samples/scan_587207/candidate_v4/scan587207_OOP_candidate_keyframes.json"
   }
 }

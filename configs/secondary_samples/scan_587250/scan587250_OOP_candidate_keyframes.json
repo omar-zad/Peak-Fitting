@@ -469,7 +469,7 @@
     "sample_label": "Dimitar_airn2ITO",
     "cut": "OOP",
     "series_type": "secondary_in_situ_time_series",
-    "frame_manifest": "./data/dimitar_airn2ito/scan_587250/processed/scan587250_frame_manifest.csv",
+    "frame_manifest": "<private-working-tree>/data/dimitar_airn2ito/scan_587250/processed/scan587250_frame_manifest.csv",
     "key_frames": [
       0,
       11,

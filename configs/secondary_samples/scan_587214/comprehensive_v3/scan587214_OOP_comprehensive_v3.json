@@ -1,0 +1,962 @@
+{
+  "frame_temperatures_C": {
+    "0": 45.9,
+    "1": 46.2,
+    "2": 46.3,
+    "3": 46.3,
+    "4": 46.2,
+    "5": 46.3,
+    "6": 46.4,
+    "7": 46.4,
+    "8": 46.6,
+    "9": 46.5,
+    "10": 46.6,
+    "11": 46.6,
+    "12": 46.6,
+    "13": 46.5,
+    "14": 46.6,
+    "15": 46.5,
+    "16": 46.5,
+    "17": 46.6,
+    "18": 46.5,
+    "19": 46.5,
+    "20": 46.6,
+    "21": 46.3,
+    "22": 46.7,
+    "23": 46.4,
+    "24": 46.5,
+    "25": 46.5,
+    "26": 46.3,
+    "27": 46.5,
+    "28": 46.4,
+    "29": 46.5,
+    "30": 46.6,
+    "31": 46.7,
+    "32": 46.6,
+    "33": 46.7,
+    "34": 46.5,
+    "35": 46.3,
+    "36": 46.4,
+    "37": 46.4,
+    "38": 46.5,
+    "39": 46.6,
+    "40": 46.5,
+    "41": 46.6,
+    "42": 46.7,
+    "43": 46.5,
+    "44": 46.6,
+    "45": 46.4,
+    "46": 46.6,
+    "47": 46.7,
+    "48": 46.5,
+    "49": 46.6,
+    "50": 46.6,
+    "51": 46.6,
+    "52": 48.9,
+    "53": 61.5,
+    "54": 70.1,
+    "55": 75.2,
+    "56": 76.8,
+    "57": 77.0,
+    "58": 76.5,
+    "59": 76.2,
+    "60": 76.1,
+    "61": 75.8,
+    "62": 75.9,
+    "63": 76.0,
+    "64": 76.2,
+    "65": 76.0,
+    "66": 76.2,
+    "67": 75.8,
+    "68": 76.0,
+    "69": 75.8,
+    "70": 76.4,
+    "71": 76.1,
+    "72": 76.3,
+    "73": 76.4,
+    "74": 76.2,
+    "75": 76.4,
+    "76": 76.6,
+    "77": 76.0,
+    "78": 76.1,
+    "79": 76.3,
+    "80": 76.4,
+    "81": 76.2,
+    "82": 76.2,
+    "83": 76.5,
+    "84": 76.3,
+    "85": 76.3,
+    "86": 76.1,
+    "87": 76.3,
+    "88": 76.4,
+    "89": 76.2,
+    "90": 76.5,
+    "91": 76.0,
+    "92": 76.2,
+    "93": 76.3,
+    "94": 76.3,
+    "95": 76.0,
+    "96": 76.4,
+    "97": 76.3,
+    "98": 76.1,
+    "99": 76.1
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 5,
+    "multistarts_final": 8,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "oop_low_q_early_hold",
+      "title": "OOP low-q region, early 46 C hold (frames 0-30): broad component, sharp 0.343 line and 0.36 shoulder",
+      "q_min": 0.24,
+      "q_max": 0.42,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0300_broad_early",
+          "label": "OOP broad component near 0.30 (early hold)",
+          "q_guess": 0.298,
+          "q_min": 0.272,
+          "q_max": 0.328,
+          "fwhm_guess": 0.06,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.14,
+          "anchor_frame": 25,
+          "anchor_temperature_C": 46.5,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "oop_q0343_early",
+          "label": "OOP very sharp line near 0.343 (early hold; position only)",
+          "q_guess": 0.343,
+          "q_min": 0.334,
+          "q_max": 0.352,
+          "fwhm_guess": 0.01,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.03,
+          "anchor_frame": 25,
+          "anchor_temperature_C": 46.5,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q0360_early",
+          "label": "OOP shoulder near 0.36 (early hold)",
+          "q_guess": 0.36,
+          "q_min": 0.35,
+          "q_max": 0.378,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.014,
+          "fwhm_max": 0.07,
+          "anchor_frame": 25,
+          "anchor_temperature_C": 46.5,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 64.9,
+      "frame_max": 30,
+      "scientific_note": "Frames 22-30 show a one-pixel line at 0.343 with a shoulder near 0.36; both merge into one peak near 0.353 by frame 35. Frame 0 is amorphous."
+    },
+    {
+      "key": "oop_low_q_late_hold",
+      "title": "OOP low-q region, late 46 C hold (frames 31-52): broad component and 0.35 peak",
+      "q_min": 0.24,
+      "q_max": 0.42,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0305_broad_late",
+          "label": "OOP broad component near 0.31 (late hold)",
+          "q_guess": 0.308,
+          "q_min": 0.278,
+          "q_max": 0.328,
+          "fwhm_guess": 0.06,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.14,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "oop_q0355_late",
+          "label": "OOP sharper component near 0.35 (late hold)",
+          "q_guess": 0.354,
+          "q_min": 0.336,
+          "q_max": 0.372,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.065,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 64.9,
+      "frame_min": 31,
+      "frame_max": 52
+    },
+    {
+      "key": "oop_low_q_highT",
+      "title": "OOP low-q region, 76 C hold: broad component and 0.35-0.36 peak",
+      "q_min": 0.24,
+      "q_max": 0.42,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0305_broad",
+          "label": "OOP broad component near 0.31",
+          "q_guess": 0.305,
+          "q_min": 0.278,
+          "q_max": 0.328,
+          "fwhm_guess": 0.06,
+          "fwhm_min": 0.025,
+          "fwhm_max": 0.14,
+          "anchor_frame": 71,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "oop_q0355",
+          "label": "OOP sharper component near 0.35-0.36",
+          "q_guess": 0.354,
+          "q_min": 0.336,
+          "q_max": 0.372,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.065,
+          "anchor_frame": 60,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 65.0
+    },
+    {
+      "key": "oop_q0492_q0535",
+      "title": "OOP component near 0.49 and conditional shoulder near 0.54",
+      "q_min": 0.43,
+      "q_max": 0.565,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0492",
+          "label": "OOP component near 0.49",
+          "q_guess": 0.493,
+          "q_min": 0.47,
+          "q_max": 0.512,
+          "fwhm_guess": 0.028,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.1,
+          "anchor_frame": 60,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50,
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "oop_q0535",
+          "label": "OOP conditional shoulder near 0.54",
+          "q_guess": 0.535,
+          "q_min": 0.518,
+          "q_max": 0.552,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.08,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "scientific_note": "At frames 71-99 the main peak becomes asymmetric with a sub-maximum near 0.480 two pixels below the 0.493 maximum; this is not resolvable on the present q grid and the fitted centre is the intensity-weighted maximum."
+    },
+    {
+      "key": "oop_q0604_q0672",
+      "title": "OOP components near 0.60 and 0.67",
+      "q_min": 0.56,
+      "q_max": 0.705,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0604",
+          "label": "OOP component near 0.60",
+          "q_guess": 0.603,
+          "q_min": 0.578,
+          "q_max": 0.622,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.09,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50,
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "oop_q0672",
+          "label": "OOP component near 0.67",
+          "q_guess": 0.672,
+          "q_min": 0.65,
+          "q_max": 0.692,
+          "fwhm_guess": 0.028,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.085,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "oop_q0736",
+      "title": "OOP sharp feature near 0.74",
+      "q_min": 0.695,
+      "q_max": 0.79,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0736",
+          "label": "OOP sharp component near 0.74 (position only)",
+          "q_guess": 0.736,
+          "q_min": 0.716,
+          "q_max": 0.756,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57,
+            60,
+            71
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "oop_q0938",
+      "title": "OOP sharp feature near 0.94",
+      "q_min": 0.88,
+      "q_max": 1.0,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q0938",
+          "label": "OOP sharp component near 0.94 (position only)",
+          "q_guess": 0.937,
+          "q_min": 0.918,
+          "q_max": 0.958,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50,
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "oop_q1464_q1495_q1538",
+      "title": "OOP lines near 1.46, 1.50 and 1.54",
+      "q_min": 1.405,
+      "q_max": 1.595,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q1464",
+          "label": "OOP conditional line near 1.46 (position only)",
+          "q_guess": 1.464,
+          "q_min": 1.445,
+          "q_max": 1.482,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.07,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1495",
+          "label": "OOP conditional line near 1.50 (position only)",
+          "q_guess": 1.495,
+          "q_min": 1.483,
+          "q_max": 1.51,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 25,
+          "anchor_temperature_C": 46.5,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1538",
+          "label": "OOP sharp line near 1.54 (position only)",
+          "q_guess": 1.537,
+          "q_min": 1.522,
+          "q_max": 1.553,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "oop_pi_lowT",
+      "title": "OOP pre-heating pi-region lines",
+      "q_min": 1.61,
+      "q_max": 1.92,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q1657_lowT",
+          "label": "OOP pre-heating line near 1.66 (position only)",
+          "q_guess": 1.657,
+          "q_min": 1.638,
+          "q_max": 1.676,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1706_lowT",
+          "label": "OOP pre-heating sharp line near 1.71 (position only)",
+          "q_guess": 1.706,
+          "q_min": 1.69,
+          "q_max": 1.722,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1745_lowT",
+          "label": "OOP pre-heating line near 1.74 (position only)",
+          "q_guess": 1.745,
+          "q_min": 1.73,
+          "q_max": 1.768,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.08,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1856_lowT",
+          "label": "OOP pre-heating line near 1.86 (position only)",
+          "q_guess": 1.856,
+          "q_min": 1.835,
+          "q_max": 1.878,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.085,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 64.9,
+      "scientific_note": "Frame 0 is amorphous in this region; components are expected to be not_detected there."
+    },
+    {
+      "key": "oop_pi_highT",
+      "title": "OOP high-temperature pi-region: sharp lines plus emerging broad hump",
+      "q_min": 1.6,
+      "q_max": 1.94,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q1650_highT",
+          "label": "OOP high-temperature sharp line near 1.65 (position only)",
+          "q_guess": 1.65,
+          "q_min": 1.632,
+          "q_max": 1.67,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 60,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1700_highT",
+          "label": "OOP high-temperature sharp line near 1.70 (position only)",
+          "q_guess": 1.7,
+          "q_min": 1.685,
+          "q_max": 1.715,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 60,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1737_highT",
+          "label": "OOP high-temperature sharp shoulder near 1.74 (position only)",
+          "q_guess": 1.737,
+          "q_min": 1.724,
+          "q_max": 1.755,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 60,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1750_broad_highT",
+          "label": "OOP broad high-temperature hump near 1.73-1.75",
+          "q_guess": 1.745,
+          "q_min": 1.7,
+          "q_max": 1.8,
+          "fwhm_guess": 0.13,
+          "fwhm_min": 0.06,
+          "fwhm_max": 0.35,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "oop_q1856_highT",
+          "label": "OOP conditional sharp line near 1.86 (position only)",
+          "q_guess": 1.856,
+          "q_min": 1.84,
+          "q_max": 1.872,
+          "fwhm_guess": 0.012,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.035,
+          "anchor_frame": 60,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50,
+            57,
+            60,
+            71
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q1870_shoulder_highT",
+          "label": "OOP broad high-q shoulder near 1.85-1.88",
+          "q_guess": 1.865,
+          "q_min": 1.825,
+          "q_max": 1.905,
+          "fwhm_guess": 0.08,
+          "fwhm_min": 0.04,
+          "fwhm_max": 0.16,
+          "anchor_frame": 85,
+          "anchor_temperature_C": 76.3,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 65.0,
+      "scientific_note": "The broad hump and the broad high-q shoulder are background-sensitive by construction; their centres are descriptive positions, not lattice spacings."
+    },
+    {
+      "key": "oop_q2012_q2032",
+      "title": "OOP lines near 2.01 and 2.03",
+      "q_min": 1.945,
+      "q_max": 2.055,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q2012",
+          "label": "OOP line near 2.01 (position only)",
+          "q_guess": 2.012,
+          "q_min": 1.996,
+          "q_max": 2.024,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q2032",
+          "label": "OOP conditional line near 2.03 (position only)",
+          "q_guess": 2.032,
+          "q_min": 2.024,
+          "q_max": 2.045,
+          "fwhm_guess": 0.012,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.04,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "oop_q2168_q2195",
+      "title": "OOP lines near 2.17 and 2.19",
+      "q_min": 2.09,
+      "q_max": 2.235,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "oop_q2168",
+          "label": "OOP line near 2.17 (position only)",
+          "q_guess": 2.166,
+          "q_min": 2.15,
+          "q_max": 2.181,
+          "fwhm_guess": 0.022,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.08,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57,
+            60
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "oop_q2195",
+          "label": "OOP second line near 2.19 (position only)",
+          "q_guess": 2.193,
+          "q_min": 2.182,
+          "q_max": 2.216,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    }
+  ],
+  "analysis_scope": "Scan-specific comprehensive selected-frame screening for peak presence and q0/d across FR, IP and OOP. Position-only lines cannot supply FWHM, CCL or integrated-area claims.",
+  "representative_frames": [
+    0,
+    25,
+    50,
+    57,
+    60,
+    71,
+    85,
+    99
+  ],
+  "series_metadata": {
+    "scan": 587214,
+    "sample": "Dimitar_drop50",
+    "cut": "OOP",
+    "candidate_version": 3,
+    "selected_frames": [
+      0,
+      25,
+      50,
+      57,
+      60,
+      71,
+      85,
+      99
+    ],
+    "source_of_windows": "Unsmoothed scan-587214 selected-frame profiles (Savitzky-Golay maximum scan plus visual inspection); not transferred from another sample.",
+    "superseded_configs": [
+      "<private-working-tree>/configs/in_situ/scan_587214/expanded_locked_v1/scan587214_OOP_locked_expanded.json",
+      "<private-working-tree>/configs/in_situ/scan_587214/comprehensive_v2/scan587214_OOP_comprehensive_v3.json"
+    ],
+    "v3_revision_basis": "Visual QC of the v2 selected-frame fits (per-window overlays and residuals) plus a numerical audit of gate failures on visible features.",
+    "regime_rule": "Pre-heating windows use temperature <= 64.9 C (frames 0, 25, 50); high-temperature windows use >= 65 C (frames 57-99). The low-q pre-heating region is further split by acquisition frame (early hold frames 0-30 vs late hold frames 31-52) because the pattern changes with time at constant temperature. Components are still accepted separately in each frame by leave-one-component-out delta BIC and area SNR.",
+    "width_policy": "Ordinary components keep width and area; position_only lines may support q0/presence while their width and area are suppressed.",
+    "conditional_candidates": "conditional_candidate=true marks weak or single-frame candidates that are tested but expected to fail the gate in most frames.",
+    "deliberately_not_fitted": [
+      "IP fixed maximum near 1.046 A^-1 (present in amorphous frame 0; detector/substrate feature).",
+      "Drifting halo 1.17-1.29 A^-1 over frames 0-32 in all cuts (liquid/amorphous, not a lattice peak).",
+      "OOP dip/spike near 0.83 A^-1 (detector-gap artefact)."
+    ]
+  }
+}

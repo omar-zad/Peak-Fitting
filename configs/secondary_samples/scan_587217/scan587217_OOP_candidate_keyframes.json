@@ -235,7 +235,7 @@
     "sample_label": "Dimitar_bcnogas1",
     "cut": "OOP",
     "series_type": "secondary_in_situ_time_series",
-    "frame_manifest": "./data/dimitar_bcnogas1/scan_587217/processed/scan587217_frame_manifest.csv",
+    "frame_manifest": "<private-working-tree>/data/dimitar_bcnogas1/scan_587217/processed/scan587217_frame_manifest.csv",
     "key_frames": [
       0,
       1,

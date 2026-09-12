@@ -1,0 +1,757 @@
+{
+  "frame_temperatures_C": {
+    "0": 45.9,
+    "1": 46.2,
+    "2": 46.3,
+    "3": 46.3,
+    "4": 46.2,
+    "5": 46.3,
+    "6": 46.4,
+    "7": 46.4,
+    "8": 46.6,
+    "9": 46.5,
+    "10": 46.6,
+    "11": 46.6,
+    "12": 46.6,
+    "13": 46.5,
+    "14": 46.6,
+    "15": 46.5,
+    "16": 46.5,
+    "17": 46.6,
+    "18": 46.5,
+    "19": 46.5,
+    "20": 46.6,
+    "21": 46.3,
+    "22": 46.7,
+    "23": 46.4,
+    "24": 46.5,
+    "25": 46.5,
+    "26": 46.3,
+    "27": 46.5,
+    "28": 46.4,
+    "29": 46.5,
+    "30": 46.6,
+    "31": 46.7,
+    "32": 46.6,
+    "33": 46.7,
+    "34": 46.5,
+    "35": 46.3,
+    "36": 46.4,
+    "37": 46.4,
+    "38": 46.5,
+    "39": 46.6,
+    "40": 46.5,
+    "41": 46.6,
+    "42": 46.7,
+    "43": 46.5,
+    "44": 46.6,
+    "45": 46.4,
+    "46": 46.6,
+    "47": 46.7,
+    "48": 46.5,
+    "49": 46.6,
+    "50": 46.6,
+    "51": 46.6,
+    "52": 48.9,
+    "53": 61.5,
+    "54": 70.1,
+    "55": 75.2,
+    "56": 76.8,
+    "57": 77.0,
+    "58": 76.5,
+    "59": 76.2,
+    "60": 76.1,
+    "61": 75.8,
+    "62": 75.9,
+    "63": 76.0,
+    "64": 76.2,
+    "65": 76.0,
+    "66": 76.2,
+    "67": 75.8,
+    "68": 76.0,
+    "69": 75.8,
+    "70": 76.4,
+    "71": 76.1,
+    "72": 76.3,
+    "73": 76.4,
+    "74": 76.2,
+    "75": 76.4,
+    "76": 76.6,
+    "77": 76.0,
+    "78": 76.1,
+    "79": 76.3,
+    "80": 76.4,
+    "81": 76.2,
+    "82": 76.2,
+    "83": 76.5,
+    "84": 76.3,
+    "85": 76.3,
+    "86": 76.1,
+    "87": 76.3,
+    "88": 76.4,
+    "89": 76.2,
+    "90": 76.5,
+    "91": 76.0,
+    "92": 76.2,
+    "93": 76.3,
+    "94": 76.3,
+    "95": 76.0,
+    "96": 76.4,
+    "97": 76.3,
+    "98": 76.1,
+    "99": 76.1
+  },
+  "profiles_to_compare": [
+    "gaussian",
+    "lorentzian",
+    "pseudo_voigt"
+  ],
+  "fit_settings": {
+    "background_order": 1,
+    "multistarts_model_selection": 5,
+    "multistarts_final": 8,
+    "pseudo_voigt_eta_grid_step": 0.1,
+    "minimum_points_across_fwhm_for_reporting": 5.0,
+    "tentative_delta_bic": 2.0,
+    "detected_delta_bic": 6.0,
+    "strong_delta_bic": 10.0,
+    "tentative_area_snr": 2.0,
+    "detected_area_snr": 3.0,
+    "strong_area_snr": 5.0
+  },
+  "windows": [
+    {
+      "key": "ip_low_q_lowT",
+      "title": "IP pre-heating low-q components",
+      "q_min": 0.225,
+      "q_max": 0.415,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q0295_broad_lowT",
+          "label": "IP pre-heating broad component near 0.30-0.33",
+          "q_guess": 0.3,
+          "q_min": 0.258,
+          "q_max": 0.34,
+          "fwhm_guess": 0.07,
+          "fwhm_min": 0.03,
+          "fwhm_max": 0.14,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "ip_q0348_lowT",
+          "label": "IP pre-heating sharp line near 0.35 (position only)",
+          "q_guess": 0.348,
+          "q_min": 0.333,
+          "q_max": 0.364,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.006,
+          "fwhm_max": 0.05,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 64.9
+    },
+    {
+      "key": "ip_low_q_highT",
+      "title": "IP high-temperature low-q components",
+      "q_min": 0.225,
+      "q_max": 0.415,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q0287_broad_highT",
+          "label": "IP high-temperature broad component near 0.29",
+          "q_guess": 0.287,
+          "q_min": 0.258,
+          "q_max": 0.315,
+          "fwhm_guess": 0.07,
+          "fwhm_min": 0.03,
+          "fwhm_max": 0.14,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "ip_q0347_highT",
+          "label": "IP high-temperature component near 0.35",
+          "q_guess": 0.347,
+          "q_min": 0.333,
+          "q_max": 0.364,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.07,
+          "anchor_frame": 85,
+          "anchor_temperature_C": 76.3,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "ip_q0387_highT",
+          "label": "IP late sharp line near 0.39 (position only)",
+          "q_guess": 0.387,
+          "q_min": 0.376,
+          "q_max": 0.398,
+          "fwhm_guess": 0.012,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.04,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 65.0
+    },
+    {
+      "key": "ip_q0474_q0505",
+      "title": "IP components near 0.47 and 0.50",
+      "q_min": 0.43,
+      "q_max": 0.545,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q0474",
+          "label": "IP line near 0.47 (position only)",
+          "q_guess": 0.474,
+          "q_min": 0.458,
+          "q_max": 0.487,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 57,
+          "anchor_temperature_C": 77.0,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "ip_q0505",
+          "label": "IP component near 0.50",
+          "q_guess": 0.505,
+          "q_min": 0.488,
+          "q_max": 0.522,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.08,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "ip_q0585",
+      "title": "IP late component near 0.58",
+      "q_min": 0.545,
+      "q_max": 0.645,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q0585",
+          "label": "IP component near 0.58",
+          "q_guess": 0.582,
+          "q_min": 0.555,
+          "q_max": 0.6,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.09,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "ip_q0750",
+      "title": "IP conditional line near 0.75",
+      "q_min": 0.7,
+      "q_max": 0.805,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q0750",
+          "label": "IP conditional line near 0.75 (position only)",
+          "q_guess": 0.75,
+          "q_min": 0.732,
+          "q_max": 0.768,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "ip_q1502_q1543",
+      "title": "IP lines near 1.50 and 1.54",
+      "q_min": 1.455,
+      "q_max": 1.585,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q1502",
+          "label": "IP component near 1.50",
+          "q_guess": 1.502,
+          "q_min": 1.485,
+          "q_max": 1.52,
+          "fwhm_guess": 0.025,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.08,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57,
+            60
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "ip_q1543",
+          "label": "IP sharp line near 1.54 (position only)",
+          "q_guess": 1.543,
+          "q_min": 1.528,
+          "q_max": 1.558,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 25,
+          "anchor_temperature_C": 46.5,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50,
+            57,
+            60,
+            71
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "ip_pi_lowT",
+      "title": "IP pre-heating pi-region components",
+      "q_min": 1.62,
+      "q_max": 1.93,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q1668_lowT",
+          "label": "IP conditional pre-heating line near 1.67 (position only)",
+          "q_guess": 1.668,
+          "q_min": 1.648,
+          "q_max": 1.688,
+          "fwhm_guess": 0.018,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.07,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "ip_q1755_lowT",
+          "label": "IP pre-heating component near 1.75",
+          "q_guess": 1.755,
+          "q_min": 1.73,
+          "q_max": 1.78,
+          "fwhm_guess": 0.03,
+          "fwhm_min": 0.009,
+          "fwhm_max": 0.11,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "ip_q1875_lowT",
+          "label": "IP conditional pre-heating line near 1.88 (position only)",
+          "q_guess": 1.875,
+          "q_min": 1.855,
+          "q_max": 1.895,
+          "fwhm_guess": 0.02,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.08,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_max_C": 64.9
+    },
+    {
+      "key": "ip_pi_highT",
+      "title": "IP high-temperature pi-region: broad hump, broad high-q shoulder and conditional 1.66 line",
+      "q_min": 1.58,
+      "q_max": 1.94,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q1660_highT",
+          "label": "IP conditional high-temperature line near 1.66 (position only)",
+          "q_guess": 1.66,
+          "q_min": 1.645,
+          "q_max": 1.678,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 57,
+          "anchor_temperature_C": 77.0,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "ip_q1750_broad_highT",
+          "label": "IP broad high-temperature hump near 1.75",
+          "q_guess": 1.75,
+          "q_min": 1.705,
+          "q_max": 1.8,
+          "fwhm_guess": 0.1,
+          "fwhm_min": 0.03,
+          "fwhm_max": 0.3,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        },
+        {
+          "key": "ip_q1875_shoulder_highT",
+          "label": "IP broad high-q shoulder near 1.87",
+          "q_guess": 1.875,
+          "q_min": 1.83,
+          "q_max": 1.91,
+          "fwhm_guess": 0.08,
+          "fwhm_min": 0.04,
+          "fwhm_max": 0.18,
+          "anchor_frame": 99,
+          "anchor_temperature_C": 76.1,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            57,
+            60,
+            71,
+            85,
+            99
+          ],
+          "conditional_candidate": false
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true,
+      "temperature_min_C": 65.0
+    },
+    {
+      "key": "ip_q2016",
+      "title": "IP sharp line near 2.02",
+      "q_min": 1.955,
+      "q_max": 2.055,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q2016",
+          "label": "IP sharp line near 2.02 (position only)",
+          "q_guess": 2.016,
+          "q_min": 1.998,
+          "q_max": 2.03,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.05,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50,
+            57,
+            60,
+            71
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "ip_q2080_q2115",
+      "title": "IP lines near 2.08 and 2.12",
+      "q_min": 2.045,
+      "q_max": 2.16,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q2080",
+          "label": "IP line near 2.08 (position only)",
+          "q_guess": 2.08,
+          "q_min": 2.062,
+          "q_max": 2.096,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57,
+            60
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        },
+        {
+          "key": "ip_q2115",
+          "label": "IP line near 2.12 (position only)",
+          "q_guess": 2.115,
+          "q_min": 2.1,
+          "q_max": 2.132,
+          "fwhm_guess": 0.016,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 50,
+          "anchor_temperature_C": 46.6,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            50,
+            57,
+            60
+          ],
+          "conditional_candidate": false,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    },
+    {
+      "key": "ip_q2254",
+      "title": "IP conditional line near 2.25",
+      "q_min": 2.205,
+      "q_max": 2.31,
+      "background_order": 1,
+      "peaks": [
+        {
+          "key": "ip_q2254",
+          "label": "IP conditional line near 2.25 (position only)",
+          "q_guess": 2.254,
+          "q_min": 2.238,
+          "q_max": 2.272,
+          "fwhm_guess": 0.014,
+          "fwhm_min": 0.008,
+          "fwhm_max": 0.06,
+          "anchor_frame": 25,
+          "anchor_temperature_C": 46.5,
+          "provisional_assignment": true,
+          "evidence_frames": [
+            25,
+            50
+          ],
+          "conditional_candidate": true,
+          "position_only": true,
+          "suppress_fwhm_interpretation": true
+        }
+      ],
+      "profiles_to_compare": [
+        "gaussian",
+        "lorentzian",
+        "pseudo_voigt"
+      ],
+      "candidate_window_requires_visual_review": true
+    }
+  ],
+  "analysis_scope": "Scan-specific comprehensive selected-frame screening for peak presence and q0/d across FR, IP and OOP. Position-only lines cannot supply FWHM, CCL or integrated-area claims.",
+  "representative_frames": [
+    0,
+    25,
+    50,
+    57,
+    60,
+    71,
+    85,
+    99
+  ],
+  "series_metadata": {
+    "scan": 587214,
+    "sample": "Dimitar_drop50",
+    "cut": "IP",
+    "candidate_version": 3,
+    "selected_frames": [
+      0,
+      25,
+      50,
+      57,
+      60,
+      71,
+      85,
+      99
+    ],
+    "source_of_windows": "Unsmoothed scan-587214 selected-frame profiles (Savitzky-Golay maximum scan plus visual inspection); not transferred from another sample.",
+    "superseded_configs": [
+      "<private-working-tree>/configs/in_situ/scan_587214/expanded_locked_v1/scan587214_IP_locked_expanded.json",
+      "<private-working-tree>/configs/in_situ/scan_587214/comprehensive_v2/scan587214_IP_comprehensive_v3.json"
+    ],
+    "v3_revision_basis": "Visual QC of the v2 selected-frame fits (per-window overlays and residuals) plus a numerical audit of gate failures on visible features.",
+    "regime_rule": "Pre-heating windows use temperature <= 64.9 C (frames 0, 25, 50); high-temperature windows use >= 65 C (frames 57-99). The low-q pre-heating region is further split by acquisition frame (early hold frames 0-30 vs late hold frames 31-52) because the pattern changes with time at constant temperature. Components are still accepted separately in each frame by leave-one-component-out delta BIC and area SNR.",
+    "width_policy": "Ordinary components keep width and area; position_only lines may support q0/presence while their width and area are suppressed.",
+    "conditional_candidates": "conditional_candidate=true marks weak or single-frame candidates that are tested but expected to fail the gate in most frames.",
+    "deliberately_not_fitted": [
+      "IP fixed maximum near 1.046 A^-1 (present in amorphous frame 0; detector/substrate feature).",
+      "Drifting halo 1.17-1.29 A^-1 over frames 0-32 in all cuts (liquid/amorphous, not a lattice peak).",
+      "OOP dip/spike near 0.83 A^-1 (detector-gap artefact)."
+    ]
+  }
+}

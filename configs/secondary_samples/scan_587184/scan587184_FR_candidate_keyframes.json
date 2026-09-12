@@ -230,7 +230,7 @@
     "sample_label": "Dimitar_spin",
     "cut": "FR",
     "series_type": "secondary_in_situ_time_series",
-    "frame_manifest": "./data/dimitar_spin/scan_587184/processed/scan587184_frame_manifest.csv",
+    "frame_manifest": "<private-working-tree>/data/dimitar_spin/scan_587184/processed/scan587184_frame_manifest.csv",
     "key_frames": [
       0,
       5,
@@ -243,7 +243,7 @@
     ],
     "anchor_frame": 55,
     "anchor_temperature_C": 83.9,
-    "template_config": "./configs/in_situ/scan_587214/representative/scan587214_FR_keyframes.json",
+    "template_config": "./configs/secondary_samples/scan_587214/representative/scan587214_FR_keyframes.json",
     "scientific_status": "Sample-specific candidate v2 windows selected from this scan's own unsmoothed key-frame overlays. All assignments remain provisional; first-frame, selected-frame and residual QC are required.",
     "source_candidate_config": "./configs/secondary_samples/scan_587184/candidate_v1/scan587184_FR_candidate_keyframes.json"
   }
