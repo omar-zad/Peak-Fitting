@@ -314,6 +314,18 @@ Further details are in [docs/USAGE_GUIDE.md](docs/USAGE_GUIDE.md),
 [docs/SCRIPT_MAP.md](docs/SCRIPT_MAP.md) and
 [docs/NINE_FRAME_DATA_CORRECTION.md](docs/NINE_FRAME_DATA_CORRECTION.md).
 
+## Generative AI disclosure
+
+Anthropic Claude and OpenAI Codex were used to assist with developing,
+debugging and documenting portions of the Python peak-fitting and data-processing
+workflow; organising analytical outputs; preparing diagnostic figures and
+tables; and providing feedback on explanatory and methodological wording.
+AI-generated suggestions and outputs were checked against the underlying
+experimental data, fitting diagnostics and automated tests. The repository
+owner made the final decisions concerning model configuration, peak acceptance,
+scientific interpretation and the contents of this repository, and takes
+responsibility for them.
+
 ## Licence and citation
 
 The software is released under the MIT Licence ([LICENSE](LICENSE)). The example
