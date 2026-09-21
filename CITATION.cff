@@ -10,7 +10,7 @@ abstract: >-
   reporting gates.
 authors:
   - given-names: Omar
-    family-names: "REPLACE_WITH_YOUR_FAMILY_NAME"
+    family-names: "Al-Zadjali"
     # orcid: "https://orcid.org/0000-0000-0000-0000"
 repository-code: "https://github.com/omar-zad/Peak-Fitting"
 license: MIT
